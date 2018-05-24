@@ -1,0 +1,40 @@
+
+.one_header {
+  padding: 15px;
+  background: #bbbbbb;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.comp_a_button {
+  padding: 8px;
+  background: #cccccc;
+}
+
+.comp_p_button {
+  padding: 8px;
+  background: #dddddd;
+}
+
+.comp_c_button {
+  padding: 8px;
+  background: #eeeeee;
+}
+
+.intermediate_result {
+  padding: 8px;
+  background: #ffffff;
+}
+
+.tabs-md .tabbar {
+  background: #000;
+}
+/*// all tabs texts*/
+   .tabs-md .tab-button-text {
+     font-size: 14px;
+     color: #fff;
+   }
+/*// selected tab*/
+   .tabs-md .tab-button {
+     background-color: #fff;
+   }

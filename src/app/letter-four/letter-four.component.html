@@ -1,0 +1,67 @@
+<div class="header">
+  <div class="title">Spine</div>
+</div>
+
+<div>
+
+  <div class="card">
+    <div class="card-header one_header">
+      4 Instability
+    </div>
+  </div>
+  <div class="card">
+
+    <button (click)="select('A / P', 'button_one')" class="btn btn-default spine_a_button">
+      <div class="row">
+        <div class="col">
+          < 6 mm
+        </div>
+        <div class="col">
+          <div name="checkmark-circle" float-end *ngIf="button_one == true"><b>:</b></div>
+        </div>
+      </div>
+
+    </button>
+  </div>
+  <div class="card">
+
+    <button (click)="select('C', 'button_two')" class="btn btn-default spine_c_button">
+      <div class="row">
+        <div class="col">
+          > 6 mm
+        </div>
+        <div class="col">
+          <div name="checkmark-circle" float-end *ngIf="button_two == true"><b>:</b></div>
+        </div>
+      </div>
+    </button>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div class="col center text-left">
+        <button class="btn btn-outline-dark" (click)="goToNext()" [disabled]="!isenabled">Next</button>
+      </div>
+      <div class="col center text-center">
+        <div class="card">
+          <div class="row">
+            <div class="col center text-center">
+              A: {{a}}
+            </div>
+            <div class="col center text-center">
+              P: {{p}}
+            </div>
+            <div class="col center text-center">
+              C: {{c}}
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col center text-right">
+
+      </div>
+    </div>
+  </div>
+
+</div>
