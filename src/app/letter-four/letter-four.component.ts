@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-letter-four',
@@ -19,7 +20,7 @@ export class LetterFourComponent implements OnInit {
   private currentColor: string;
   private isenabled: boolean;
 
-  constructor() {
+  constructor(private router: Router) {
     this.seven_letter_choice_3 = localStorage.getItem('seven_letter_choice_3');
     this.a4 = Number(localStorage.getItem('a'));
     this.p4 = Number(localStorage.getItem('p'));
@@ -37,16 +38,16 @@ export class LetterFourComponent implements OnInit {
     this.a = this.a4;
     this.p = this.p4;
     this.c = this.c4;
-    if (seven_letter_choice_4 == 'A / P') {
+    if (seven_letter_choice_4 === 'A / P') {
       this.a = this.a + 0.5;
       this.p = this.p + 0.5;
-    } else if (seven_letter_choice_4 == 'C') {
+    } else if (seven_letter_choice_4 === 'C') {
       this.c = this.c + 1;
     }
-    if (button == 'button_one') {
+    if (button === 'button_one') {
       this.button_one = true;
       this.button_two = false;
-    } else if (button == 'button_two') {
+    } else if (button === 'button_two') {
       this.button_one = false;
       this.button_two = true;
     }
@@ -60,6 +61,7 @@ export class LetterFourComponent implements OnInit {
     localStorage.setItem('a', this.a.toString());
     localStorage.setItem('p', this.p.toString());
     localStorage.setItem('c', this.c.toString());
+    this.router.navigate(['five']).then().catch();
   }
 
   ngOnInit() {

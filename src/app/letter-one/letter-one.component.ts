@@ -7,8 +7,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./letter-one.component.css']
 })
 export class LetterOneComponent implements OnInit {
-  params: Object;
-  pushPage: any;
+
   p: number;
   a: number;
   c: number;
@@ -76,7 +75,6 @@ export class LetterOneComponent implements OnInit {
   goToNext() {
     console.log('param_1: ' + this.param_1);
     localStorage.setItem('letter_one', this.param_1);
-    // this.navCtrl.push(LetterTwoPage, {}
     localStorage.setItem('seven_letter_choice_1', this.param_1);
     localStorage.setItem('a', this.a.toString());
     localStorage.setItem('p', this.p.toString());

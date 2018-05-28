@@ -1,81 +1,85 @@
-<div class="header">
-      <div class="title">Compression</div>
-</div>
-
-<div>
-
-  <div class="card">
-    <div [class]="card-header" class="one_header">
-      2 Extension
-    </div>
-  </div>
-  <div class="card">
-
-    <button  (click)="select('A', 'button_one')" class="comp_a_button">
-      <div class="row">
-        <div class="col">
-          < 3
-        </div>
-        <div class="col">
-          <div name="checkmark-circle" float-end *ngIf="button_one == true"><b>:</b></div>
-        </div>
-      </div>
-
-    </button>
-  </div>
-  <div class="card">
-
-    <button ion-item (click)="select('A / P', 'button_two')" class="comp_a_button">
-      <div class="row">
-        <div class="col">
-          3
-        </div>
-        <div class="col">
-          <div name="checkmark-circle" float-end *ngIf="button_two == true"><b>:</b></div>
-        </div>
-      </div>
-    </button>
-  </div>
-
-  <div class="card">
-    <button ion-item (click)="select('P', 'button_three')" class="comp_p_button">
-      <div class="row">
-        <div class="col">
-          > 3
-        </div>
-        <div class="col">
-          <div name="checkmark-circle" float-end *ngIf="button_three == true"><b>:</b></div>
-        </div>
-      </div>
-    </button>
-  </div>
-
-<div class="card">
+<app-nav-bar title="Compression" bg="secondary"></app-nav-bar>
+<div class="container">
   <div class="row">
-    <div class="col center text-left">
-      <button class="btn btn-outline-dark" (click)="goToNext()" [disabled]="!isenabled">Next</button>
-    </div>
-    <div class="col center text-center">
-      <div class="card">
+    <div class="col-md-4">
+      <!--<div class="card">-->
+      <!--<div class="one_header bg-secondary">Compression</div>-->
+      <!--</div>-->
+
+      <div class="card mt-2">
+        <div class="one_header">
+          2 Extension
+        </div>
+      </div>
+      <div class="card mt-2">
+
+        <button (click)="select('A', 'button_one')" class="btn btn-outline-secondary">
+          <div class="row">
+            <div class="col">
+              < 3
+            </div>
+            <div class="col">
+              <div *ngIf="button_one == true"><b>:</b></div>
+            </div>
+          </div>
+
+        </button>
+      </div>
+      <div class="card mt-2">
+
+        <button (click)="select('A / P', 'button_two')" class="btn btn-outline-secondary">
+          <div class="row">
+            <div class="col">
+              3
+            </div>
+            <div class="col">
+              <div *ngIf="button_two == true"><b>:</b></div>
+            </div>
+          </div>
+        </button>
+      </div>
+
+      <div class="card mt-2">
+        <button (click)="select('P', 'button_three')" class="btn btn-outline-secondary">
+          <div class="row">
+            <div class="col">
+              > 3
+            </div>
+            <div class="col">
+              <div name="checkmark-circle" float-end *ngIf="button_three == true"><b>:</b></div>
+            </div>
+          </div>
+        </button>
+      </div>
+
+      <div class="card mt-2">
         <div class="row">
-          <div class="col center text-center">
-            A: {{a}}
+          <div class="col-2 center text-left">
+            <button class="btn btn-outline-dark" (click)="goToNext()" [disabled]="!isenabled">Next</button>
           </div>
-          <div class="col center text-center">
-            P: {{p}}
+          <div class="col-7 center text-center">
+            <div class="card intermediate_result">
+              <div class="row">
+                <div class="col center text-center">
+                  A: {{a}}
+                </div>
+                <div class="col center text-center">
+                  P: {{p}}
+                </div>
+                <div class="col center text-center">
+                  C: {{c}}
+                </div>
+              </div>
+
+            </div>
           </div>
-          <div class="col center text-center">
-            C: {{c}}
+          <div class="col center text-right">
+
           </div>
         </div>
-
       </div>
-    </div>
-    <div class="col center text-right">
 
     </div>
   </div>
-</div>
-
 </div>
 

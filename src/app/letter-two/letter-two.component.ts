@@ -71,6 +71,7 @@ export class LetterTwoComponent implements OnInit {
   }
 
   goToNext() {
+    localStorage.setItem('letter_two', this.param_2);
     localStorage.setItem('seven_letter_choice_2', this.param_2);
     localStorage.setItem('a', this.a.toString());
     localStorage.setItem('p', this.p.toString());

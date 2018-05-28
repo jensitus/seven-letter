@@ -1,87 +1,91 @@
-<div class="header">
-      <div class="title">Compression</div>
-</div>
+<app-nav-bar title="Compression" bg="secondary"></app-nav-bar>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
 
-  <div class="card">
-    <div class="one_header">
-      1 Location
-    </div>
-  </div>
-
-    <div class="card">
-      <button ion-item (click)="select('A', 'button_one')" class="comp_a_button">
-        <div class="row">
-          <div class="col">
-            Ant -> hill type / flat 1-2
-          </div>
-          <div class="col">
-            <div name="checkmark-circle" float-end *ngIf="button_one == true"><b>:</b></div>
-          </div>
+      <div class="card mt-2">
+        <div class="one_header bg-outline-secondary">
+          1 Location
         </div>
-      </button>
-    </div>
-<div class="card">
-  <button ion-item (click)="select('P', 'button_two')" class="comp_p_button">
-    <div class="row">
-      <div class="col">
-        Ant -> flat 3
       </div>
-      <div class="col">
-        <div name="checkmark-circle" float-end *ngIf="button_two == true"><b>:</b></div>
-      </div>
-    </div>
-  </button>
-</div>
-<div class="card">
-  <button ion-item (click)="select('P', 'button_three')" class="comp_p_button">
-    <div class="row">
-      <div class="col">
-        Post
-      </div>
-      <div class="col">
-        <div name="checkmark-circle" float-end *ngIf="button_three == true"><b>:</b></div>
-      </div>
-    </div>
-  </button>
-</div>
-<div class="card">
-  <button ion-item (click)="select('P/C', 'button_four')" class="comp_c_button">
-    <div class="row">
-      <div class="col">
-        Post
-      </div>
-      <div class="col">
-        <div name="checkmark-circle" float-end *ngIf="button_four == true"><b>:</b></div>
-      </div>
-    </div>
-  </button>
-</div>
 
-
-  <div class="card">
-    <div class="row">
-      <div class="col center text-left">
-        <button class="btn btn-outline-dark" (click)="goToNext()" [disabled]="!isenabled">Next</button>
-      </div>
-      <div class="col center text-center">
-        <div class="card">
+      <div class="card mt-2">
+        <button (click)="select('A', 'button_one')" class="btn btn-outline-secondary">
           <div class="row">
-            <div class="col center text-center">
-              A: {{a}}
+            <div class="col">
+              Ant -> hill type / flat 1-2
             </div>
-            <div class="col center text-center">
-              P: {{p}}
-            </div>
-            <div class="col center text-center">
-              C: {{c}}
+            <div class="col">
+              <div name="checkmark-circle" float-end *ngIf="button_one == true"><b>:</b></div>
             </div>
           </div>
-
-        </div>
+        </button>
       </div>
-      <div class="col center text-right">
-        <button class="btn btn-outline-dark" (click)="presentModal()" outline>Picture</button>
+      <div class="card mt-2">
+        <button (click)="select('P', 'button_two')" class="btn btn-outline-secondary">
+          <div class="row">
+            <div class="col">
+              Ant -> flat 3
+            </div>
+            <div class="col">
+              <div *ngIf="button_two == true"><b>:</b></div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="card mt-2">
+        <button (click)="select('P', 'button_three')" class="btn btn-outline-secondary">
+          <div class="row">
+            <div class="col">
+              Post
+            </div>
+            <div class="col">
+              <div *ngIf="button_three == true"><b>:</b></div>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="card mt-2">
+        <button (click)="select('P/C', 'button_four')" class="btn btn-outline-secondary">
+          <div class="row">
+            <div class="col">
+              Post
+            </div>
+            <div class="col">
+              <div *ngIf="button_four == true"><b>:</b></div>
+            </div>
+          </div>
+        </button>
+      </div>
+
+      <div class="card mt-2">
+        <div class="row">
+          <div class="col-2">
+            <button class="btn btn-sm btn-outline-dark" (click)="goToNext()" [disabled]="!isenabled">Next</button>
+          </div>
+          <div class="col-7">
+            <div class="card intermediate_result">
+              <div class="row">
+                <div class="col">
+                  A: {{a}}
+                </div>
+                <div class="col">
+                  P: {{p}}
+                </div>
+                <div class="col">
+                  C: {{c}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3 text-right">
+            <button class="btn btn-sm btn-outline-dark" (click)="presentModal()" outline>Picture</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
+
+
 

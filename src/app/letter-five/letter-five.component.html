@@ -1,22 +1,18 @@
-<app-nav-bar title="Spine" bg="warning"></app-nav-bar>
+<app-nav-bar title="Morbidity" bg="danger"></app-nav-bar>
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-      <!--<div class="header">-->
-      <!--<div class="title">Spine</div>-->
-      <!--</div>-->
-
       <div class="card mt-2">
-        <div class="one_header">
-          3 Alignment
+        <div class="card-header morb_header">
+          5 ASA
         </div>
       </div>
       <div class="card mt-2">
 
-        <button (click)="select('A / P', 'button_one')" class="btn btn-outline-warning">
+        <button (click)="select('A / P', 'button_one')" class="btn btn-outline-danger">
           <div class="row">
             <div class="col">
-              < 3
+              ASA &le; 3
             </div>
             <div class="col">
               <div *ngIf="button_one == true"><b>:</b></div>
@@ -27,10 +23,10 @@
       </div>
       <div class="card mt-2">
 
-        <button (click)="select('A / P', 'button_two')" class="btn btn-outline-warning">
+        <button (click)="select('P', 'button_two')" class="btn btn-outline-danger">
           <div class="row">
             <div class="col">
-              3
+              ASA > 3
             </div>
             <div class="col">
               <div *ngIf="button_two == true"><b>:</b></div>
@@ -40,24 +36,11 @@
       </div>
 
       <div class="card mt-2">
-        <button (click)="select('A / C', 'button_three')" class="btn btn-outline-warning">
-          <div class="row">
-            <div class="col">
-              > 3
-            </div>
-            <div class="col">
-              <div *ngIf="button_three == true"><b>:</b></div>
-            </div>
-          </div>
-        </button>
-      </div>
-
-      <div class="card mt-2">
         <div class="row">
           <div class="col-3 center text-left">
-            <button class="btn btn-outline-warning" (click)="goToNext()" [disabled]="!isenabled">Next</button>
+            <button class="btn btn-outline-danger" (click)="goToNext()" [disabled]="!isenabled">Next</button>
           </div>
-          <div class="col-7 center text-center">
+          <div class="col-6 center text-center">
             <div class="card intermediate_result">
               <div class="row">
                 <div class="col center text-center">
@@ -81,5 +64,4 @@
     </div>
   </div>
 </div>
-
 

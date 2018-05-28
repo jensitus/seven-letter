@@ -1,7 +1,6 @@
 
 .one_header {
   padding: 15px;
-  background: #bbbbbb;
   font-weight: bold;
   font-size: 18px;
 }
@@ -24,6 +23,7 @@
 .intermediate_result {
   padding: 8px;
   background: #ffffff;
+  font-size: 10px;
 }
 
 .tabs-md .tabbar {
@@ -38,3 +38,4 @@
    .tabs-md .tab-button {
      background-color: #fff;
    }
+
