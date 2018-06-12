@@ -31,7 +31,7 @@ export class ResultComponent implements OnInit {
     console.log('result c: ' + this.c);
     this.currentColor = 'primary';
 
-    if (this.c_modifier == true) {
+    if (this.c_modifier === true) {
       this.conclusio = 'A combined approach is recommended';
     } else if ((this.a > this.p) && (this.c < 2)) {
       this.conclusio = 'Anterior approach recommended';
@@ -41,9 +41,9 @@ export class ResultComponent implements OnInit {
       this.conclusio = 'Anterior (C): A combined approach must be considered but is not crucial';
     } else if ((this.a < this.p) && (this.c >= 2)) {
       this.conclusio = 'Posterior (C): A combined approach must be considered but is not crucial';
-    } else if ((this.a == this.p) && (this.c < 2)) {
+    } else if ((this.a === this.p) && (this.c < 2)) {
       this.conclusio = 'Either Anterior or Posterior approach is possible';
-    } else if ((this.a == this.p) && (this.c >= 2)) {
+    } else if ((this.a === this.p) && (this.c >= 2)) {
       this.conclusio = 'Anterior and Posterior and C';
     }
     console.log('localStorage:');

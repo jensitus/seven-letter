@@ -13,6 +13,9 @@ export class LetterTwoComponent implements OnInit {
   a: number;
   p: number;
   c: number;
+  a1: number;
+  p1: number;
+  c1: number;
   a2: number;
   p2: number;
   c2: number;
@@ -20,29 +23,29 @@ export class LetterTwoComponent implements OnInit {
   button_two: boolean;
   button_three: boolean;
   private currentColor: string;
-  private isenabled: boolean;
+  isenabled: boolean;
 
   constructor(private router: Router) {
     this.seven_letter_choice_1 = localStorage.getItem('seven_letter_choice_1');
-    this.a2 = Number(localStorage.getItem('a'));
-    this.p2 = Number(localStorage.getItem('p'));
-    this.c2 = Number(localStorage.getItem('c'));
-    this.a = this.a2;
-    this.p = this.p2;
-    this.c = this.c2;
+    this.a1 = Number(localStorage.getItem('a1'));
+    this.p1 = Number(localStorage.getItem('p1'));
+    this.c1 = Number(localStorage.getItem('c1'));
+    this.a = this.a1;
+    this.p = this.p1;
+    this.c = this.c1;
     this.currentColor = 'compression';
     this.isenabled = false;
     console.log('P1: ' + this.seven_letter_choice_1);
-    console.log('this.a2' + this.a2);
-    console.log(typeof this.a2);
+    console.log('this.a2' + this.a1);
+    console.log(typeof this.a1);
   }
 
   select(seven_letter_choice_2, button) {
     this.param_2 = seven_letter_choice_2;
     console.log('param_2: ' + this.param_2);
-    this.a = this.a2;
-    this.p = this.p2;
-    this.c = this.c2;
+    this.a = this.a1;
+    this.p = this.p1;
+    this.c = this.c1;
     if (seven_letter_choice_2 === 'A') {
       this.a = this.a + 1;
     } else if (seven_letter_choice_2 === 'P') {
@@ -64,6 +67,9 @@ export class LetterTwoComponent implements OnInit {
       this.button_two = false;
       this.button_three = true;
     }
+    this.a2 = this.a;
+    this.p2 = this.p;
+    this.c2 = this.c;
     this.isenabled = true;
     console.log('this.a - 2: ' + this.a);
     console.log('this.p - 2: ' + this.p);
@@ -76,6 +82,9 @@ export class LetterTwoComponent implements OnInit {
     localStorage.setItem('a', this.a.toString());
     localStorage.setItem('p', this.p.toString());
     localStorage.setItem('c', this.c.toString());
+    localStorage.setItem('a2', this.a2.toString());
+    localStorage.setItem('p2', this.p2.toString());
+    localStorage.setItem('c2', this.c2.toString());
     this.router.navigate(['three']).then().catch();
   }
 

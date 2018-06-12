@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-nav-bar',
@@ -13,11 +14,15 @@ export class NavBarComponent implements OnInit {
   navback: string;
   navbar_title: string;
 
-  constructor() {
+  constructor(private location: Location) {
     this.navback = 'light';
     this.navbar_title = '7 L C';
     // this.navback = localStorage.getItem('navback');
     // this.navbar_title = localStorage.getItem('navbar_title');
+  }
+
+  backClick() {
+    this.location.back();
   }
 
   ngOnInit() {

@@ -12,23 +12,26 @@ export class LetterSixComponent implements OnInit {
   a: number;
   p: number;
   c: number;
+  a5: number;
+  p5: number;
+  c5: number;
   a6: number;
   p6: number;
   c6: number;
   button_one: boolean;
   private currentColor: string;
   button_two: boolean;
-  private isenabled: boolean;
+  isenabled: boolean;
 
   constructor(private router: Router) {
     this.seven_letter_choice_5 = localStorage.getItem('seven_letter_choice_5');
     console.log('seven_letter_choice_5:', this.seven_letter_choice_5);
-    this.a6 = Number(localStorage.getItem('a'));
-    this.p6 = Number(localStorage.getItem('p'));
-    this.c6 = Number(localStorage.getItem('c'));
-    this.a = this.a6;
-    this.p = this.p6;
-    this.c = this.c6;
+    this.a5 = Number(localStorage.getItem('a5'));
+    this.p5 = Number(localStorage.getItem('p5'));
+    this.c5 = Number(localStorage.getItem('c5'));
+    this.a = this.a5;
+    this.p = this.p5;
+    this.c = this.c5;
     this.button_one = false;
     this.button_two = false;
     this.currentColor = 'morbidity';
@@ -38,9 +41,9 @@ export class LetterSixComponent implements OnInit {
   select(seven_letter_choice_6, button) {
     console.log('letter three: ' + seven_letter_choice_6);
     this.param_6 = seven_letter_choice_6;
-    this.a = this.a6;
-    this.p = this.p6;
-    this.c = this.c6;
+    this.a = this.a5;
+    this.p = this.p5;
+    this.c = this.c5;
     this.isenabled = true;
     if (button === 'button_one') {
       this.button_one = true;
@@ -63,6 +66,9 @@ export class LetterSixComponent implements OnInit {
     localStorage.setItem('a', this.a.toString());
     localStorage.setItem('p', this.p.toString());
     localStorage.setItem('c', this.c.toString());
+    localStorage.setItem('a6', this.a6.toString());
+    localStorage.setItem('p6', this.p6.toString());
+    localStorage.setItem('c6', this.c6.toString());
     this.router.navigate(['seven']).then().catch();
   }
 

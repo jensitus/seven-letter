@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
@@ -36,30 +36,30 @@ export class LetterOneComponent implements OnInit {
     this.a = 0;
     this.p = 0;
     this.c = 0;
-    if (seven_letter_choice_1 == 'A') {
+    if (seven_letter_choice_1 === 'A') {
       this.a = this.a + 1;
-    } else if (seven_letter_choice_1 == 'P') {
+    } else if (seven_letter_choice_1 === 'P') {
       this.p = this.p + 1;
-    } else if (seven_letter_choice_1 == 'P/C') {
+    } else if (seven_letter_choice_1 === 'P/C') {
       this.c = this.c + 1;
       this.p = this.p + 1;
     }
-    if (button == 'button_one') {
+    if (button === 'button_one') {
       this.button_one = true;
       this.button_two = false;
       this.button_three = false;
       this.button_four = false;
-    } else if (button == 'button_two') {
+    } else if (button === 'button_two') {
       this.button_one = false;
       this.button_two = true;
       this.button_three = false;
       this.button_four = false;
-    } else if (button == 'button_three') {
+    } else if (button === 'button_three') {
       this.button_one = false;
       this.button_two = false;
       this.button_three = true;
       this.button_four = false;
-    } else if (button == 'button_four') {
+    } else if (button === 'button_four') {
       this.button_one = false;
       this.button_two = false;
       this.button_three = false;
@@ -69,7 +69,7 @@ export class LetterOneComponent implements OnInit {
     console.log('this.a: ' + this.a);
     console.log('this.p: ' + this.p);
     console.log('this.c: ' + this.c);
-    console.log('disabled ' +  this.isenabled);
+    console.log('disabled ' + this.isenabled);
   }
 
   goToNext() {
@@ -78,8 +78,11 @@ export class LetterOneComponent implements OnInit {
     localStorage.setItem('seven_letter_choice_1', this.param_1);
     localStorage.setItem('a', this.a.toString());
     localStorage.setItem('p', this.p.toString());
-      localStorage.setItem('c', this.c.toString());
-      this.router.navigate(['two']);
+    localStorage.setItem('c', this.c.toString());
+    localStorage.setItem('a1', this.a.toString());
+    localStorage.setItem('p1', this.p.toString());
+    localStorage.setItem('c1', this.c.toString());
+    this.router.navigate(['two']);
 
   }
 

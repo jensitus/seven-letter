@@ -19,7 +19,7 @@ export class LetterSevenComponent implements OnInit {
   button_one: boolean;
   private currentColor: string;
   button_two: boolean;
-  private isenabled: boolean;
+  isenabled: boolean;
 
   constructor(private router: Router) {
     this.seven_letter_choice_6 = localStorage.getItem('seven_letter_choice_6');
@@ -44,21 +44,22 @@ export class LetterSevenComponent implements OnInit {
     this.p = this.p7;
     this.c = this.c7;
     this.isenabled = true;
-    if (button == 'button_one') {
+    if (button === 'button_one') {
       this.button_one = true;
       this.button_two = false;
       console.log('button_one: ' + this.button_one);
-    } else if (button == 'button_two') {
+    } else if (button === 'button_two') {
       this.button_one = false;
       this.button_two = true;
       this.c_modifier = false;
       console.log('C-MODI + ' + this.c_modifier);
     }
-    if (seven_letter_choice_7 == 'C' && this.button_one == true) {
+    if (seven_letter_choice_7 === 'C' && this.button_one === true) {
       // this.p = this.p + 1;
       // this.c = this.c + 1;
       this.c_modifier = true;
     } else {
+      this.c_modifier = false;
       this.param_7 = '0';
     }
   }
@@ -69,6 +70,12 @@ export class LetterSevenComponent implements OnInit {
     localStorage.setItem('a', this.a.toString());
     localStorage.setItem('p', this.p.toString());
     localStorage.setItem('c', this.c.toString());
+    if (this.c_modifier) {
+      localStorage.setItem('c_modifier', 'true');
+    } else {
+      localStorage.setItem('c_modifier', 'false');
+    }
+
     this.router.navigate(['result']).then().catch();
   }
 

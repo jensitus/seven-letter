@@ -46,7 +46,7 @@
               > 3
             </div>
             <div class="col">
-              <div name="checkmark-circle" float-end *ngIf="button_three == true"><b>:</b></div>
+              <div *ngIf="button_three == true"><b>:</b></div>
             </div>
           </div>
         </button>
@@ -54,7 +54,7 @@
 
       <div class="card mt-2">
         <div class="row">
-          <div class="col-2 center text-left">
+          <div class="col-3 center text-left">
             <button class="btn btn-outline-dark" (click)="goToNext()" [disabled]="!isenabled">Next</button>
           </div>
           <div class="col-7 center text-center">

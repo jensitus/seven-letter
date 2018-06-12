@@ -16,7 +16,7 @@
               Ant -> hill type / flat 1-2
             </div>
             <div class="col">
-              <div name="checkmark-circle" float-end *ngIf="button_one == true"><b>:</b></div>
+              <div *ngIf="button_one == true"><b>:</b></div>
             </div>
           </div>
         </button>
@@ -60,10 +60,10 @@
 
       <div class="card mt-2">
         <div class="row">
-          <div class="col-2">
-            <button class="btn btn-sm btn-outline-dark" (click)="goToNext()" [disabled]="!isenabled">Next</button>
+          <div class="col-3">
+            <button class="btn btn-outline-dark" (click)="goToNext()" [disabled]="!isenabled">Next</button>
           </div>
-          <div class="col-7">
+          <div class="col-6 text-center">
             <div class="card intermediate_result">
               <div class="row">
                 <div class="col">
@@ -79,7 +79,7 @@
             </div>
           </div>
           <div class="col-3 text-right">
-            <button class="btn btn-sm btn-outline-dark" (click)="presentModal()" outline>Picture</button>
+            <button class="btn btn-outline-dark" (click)="presentModal()" outline>Pics</button>
           </div>
         </div>
       </div>

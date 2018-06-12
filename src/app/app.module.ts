@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LetterOneComponent } from './letter-one/letter-one.component';
@@ -13,18 +14,23 @@ import { LetterFiveComponent } from './letter-five/letter-five.component';
 import { LetterSixComponent } from './letter-six/letter-six.component';
 import { LetterSevenComponent } from './letter-seven/letter-seven.component';
 import { ResultComponent } from './result/result.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { ImageViewerComponent } from './image-viewer/image-viewer.component';
+
 
 const app_routes: Routes = [
-  { path: 'one',    component: LetterOneComponent },
-  { path: 'home',   component: HomeComponent },
-  { path: '',       redirectTo: 'home', pathMatch: 'full' },
-  { path: 'two',    component: LetterTwoComponent },
-  { path: 'three',  component: LetterThreeComponent },
-  { path: 'four',   component: LetterFourComponent },
-  { path: 'five',   component: LetterFiveComponent },
-  { path: 'six',    component: LetterSixComponent },
-  { path: 'seven',  component: LetterSevenComponent },
-  { path: 'result', component: ResultComponent }
+  { path: 'one',    component:   LetterOneComponent        },
+  { path: 'home',   component:   HomeComponent             },
+  { path: '',       redirectTo:  'home', pathMatch: 'full' },
+  { path: 'two',    component:   LetterTwoComponent        },
+  { path: 'three',  component:   LetterThreeComponent      },
+  { path: 'four',   component:   LetterFourComponent       },
+  { path: 'five',   component:   LetterFiveComponent       },
+  { path: 'six',    component:   LetterSixComponent        },
+  { path: 'seven',  component:   LetterSevenComponent      },
+  { path: 'result', component:   ResultComponent           },
+  { path: 'images', component:   ImageViewerComponent      }
 ];
 
 
@@ -40,11 +46,13 @@ const app_routes: Routes = [
     LetterFiveComponent,
     LetterSixComponent,
     LetterSevenComponent,
-    ResultComponent
+    ResultComponent,
+    ImageViewerComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(app_routes, { enableTracing: true })
+    RouterModule.forRoot(app_routes, { enableTracing: true }),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

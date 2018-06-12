@@ -12,22 +12,25 @@ export class LetterFourComponent implements OnInit {
   a: number;
   p: number;
   c: number;
+  a3: number;
+  p3: number;
+  c3: number;
   a4: number;
   p4: number;
   c4: number;
   button_one: boolean;
   button_two: boolean;
   private currentColor: string;
-  private isenabled: boolean;
+  isenabled: boolean;
 
   constructor(private router: Router) {
     this.seven_letter_choice_3 = localStorage.getItem('seven_letter_choice_3');
-    this.a4 = Number(localStorage.getItem('a'));
-    this.p4 = Number(localStorage.getItem('p'));
-    this.c4 = Number(localStorage.getItem('c'));
-    this.a = this.a4;
-    this.p = this.p4;
-    this.c = this.c4;
+    this.a3 = Number(localStorage.getItem('a3'));
+    this.p3 = Number(localStorage.getItem('p3'));
+    this.c3 = Number(localStorage.getItem('c3'));
+    this.a = this.a3;
+    this.p = this.p3;
+    this.c = this.c3;
     this.currentColor = 'spine';
     this.isenabled = false;
   }
@@ -35,9 +38,9 @@ export class LetterFourComponent implements OnInit {
   select(seven_letter_choice_4, button) {
     console.log('letter four: ' + seven_letter_choice_4);
     this.param_4 = seven_letter_choice_4;
-    this.a = this.a4;
-    this.p = this.p4;
-    this.c = this.c4;
+    this.a = this.a3;
+    this.p = this.p3;
+    this.c = this.c3;
     if (seven_letter_choice_4 === 'A / P') {
       this.a = this.a + 0.5;
       this.p = this.p + 0.5;
@@ -52,6 +55,9 @@ export class LetterFourComponent implements OnInit {
       this.button_two = true;
     }
     this.isenabled = true;
+    this.a4 = this.a;
+    this.c4 = this.c;
+    this.p4 = this.p;
   }
 
   goToNext() {
@@ -61,6 +67,9 @@ export class LetterFourComponent implements OnInit {
     localStorage.setItem('a', this.a.toString());
     localStorage.setItem('p', this.p.toString());
     localStorage.setItem('c', this.c.toString());
+    localStorage.setItem('a4', this.a4.toString());
+    localStorage.setItem('p4', this.p4.toString());
+    localStorage.setItem('c4', this.c4.toString());
     this.router.navigate(['five']).then().catch();
   }
 
