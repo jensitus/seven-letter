@@ -3,7 +3,7 @@
   "short_name": "seven-letter-code",
   "theme_color": "#1976d2",
   "background_color": "transparent",
-  "display": "standalone",
+  "display": "browser",
   "scope": "/",
   "start_url": "/",
   "icons": [

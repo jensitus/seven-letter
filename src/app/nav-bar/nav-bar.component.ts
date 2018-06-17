@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Location} from '@angular/common';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -14,7 +15,7 @@ export class NavBarComponent implements OnInit {
   navback: string;
   navbar_title: string;
 
-  constructor(private location: Location) {
+  constructor(private location: Location, private router: Router) {
 
     // this.navback = localStorage.getItem('navback');
     // this.navbar_title = localStorage.getItem('navbar_title');
@@ -22,6 +23,10 @@ export class NavBarComponent implements OnInit {
 
   backClick() {
     this.location.back();
+  }
+
+  homeClick() {
+    this.router.navigate(['home']).then().catch();
   }
 
   ngOnInit() {
