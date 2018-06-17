@@ -18,6 +18,7 @@ export class LetterOneComponent implements OnInit {
   button_four: boolean;
   private currentColor: string;
   public isenabled: boolean;
+  letthesunshinein: string;
 
   constructor(private router: Router) {
     this.a = 0;
@@ -28,6 +29,8 @@ export class LetterOneComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.letthesunshinein = 'jesus christus';
+    localStorage.clear();
   }
 
   select(seven_letter_choice_1, button) {
@@ -86,13 +89,8 @@ export class LetterOneComponent implements OnInit {
 
   }
 
-  presentModal() {
-    // const modal = this.modalCtrl.create(InfoPicturePage);
-    // modal.present().then((result) =>
-    //   console.log(result)
-    // ).catch((error) =>
-    //   console.log(error)
-    // );
+  showImages() {
+    this.router.navigate(['images']).then().catch();
   }
 
 }

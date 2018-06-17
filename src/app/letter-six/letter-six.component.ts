@@ -36,6 +36,9 @@ export class LetterSixComponent implements OnInit {
     this.button_two = false;
     this.currentColor = 'morbidity';
     this.isenabled = false;
+    this.a6 = this.a;
+    this.c6 = this.c;
+    this.p6 = this.p;
   }
 
   select(seven_letter_choice_6, button) {

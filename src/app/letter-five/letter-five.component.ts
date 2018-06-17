@@ -56,6 +56,9 @@ export class LetterFiveComponent implements OnInit {
       this.button_two = true;
     }
     this.isenabled = true;
+    this.a5 = this.a;
+    this.c5 = this.c;
+    this.p5 = this.p;
   }
 
   goToNext() {

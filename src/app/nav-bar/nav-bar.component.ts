@@ -15,8 +15,7 @@ export class NavBarComponent implements OnInit {
   navbar_title: string;
 
   constructor(private location: Location) {
-    this.navback = 'light';
-    this.navbar_title = '7 L C';
+
     // this.navback = localStorage.getItem('navback');
     // this.navbar_title = localStorage.getItem('navbar_title');
   }
@@ -26,6 +25,8 @@ export class NavBarComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.navback = 'light';
+    this.navbar_title = '7 L C';
   }
 
 }
