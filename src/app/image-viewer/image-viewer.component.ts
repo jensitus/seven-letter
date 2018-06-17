@@ -22,17 +22,17 @@ export class ImageViewerComponent implements OnInit {
         title: 'Combtype axial'
       },
       {
+        image: '../assets/imgs/FlattypeMRTsag.jpeg',
+        title: 'Flattype sagital'
+      },
+      {
         image: '../assets/imgs/HilltypeCTaxial.jpg',
         title: 'Hilltype axial'
       },
       {
         image: '../assets/imgs/PosttypeMRTaxial.jpg',
         title: 'Posttype axial'
-      },
-      {
-        image: '../assets/imgs/FlattypeMRTsag.jpeg',
-        title: 'Flattype sagital'
-      },
+      }
     ];
     //
     // this.jessas = '@lter';
