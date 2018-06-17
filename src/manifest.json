@@ -1,7 +1,7 @@
 {
   "name": "seven-letter-code",
   "short_name": "seven-letter-code",
-  "theme_color": "#1976d2",
+  "theme_color": "transparent",
   "background_color": "transparent",
   "display": "browser",
   "scope": "/",
