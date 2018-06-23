@@ -13,8 +13,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  letsBeginn() {
-    this.router.navigate(['/one']);
+  letsBegin() {
+    this.router.navigate(['/one']).then().catch();
   }
 
 }

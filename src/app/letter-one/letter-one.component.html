@@ -10,7 +10,7 @@
       </div>
 
       <div class="card mt-2">
-        <button (click)="select('A', 'button_one')" class="btn btn-outline-secondary">
+        <button (click)="select('A', 'button_one')" class="btn btn-outline-secondary text-left">
           <div class="row">
             <div class="col">
               Ant -> hill type / flat 1-2
@@ -22,7 +22,7 @@
         </button>
       </div>
       <div class="card mt-2">
-        <button (click)="select('P', 'button_two')" class="btn btn-outline-secondary">
+        <button (click)="select('P', 'button_two')" class="btn btn-outline-secondary text-left">
           <div class="row">
             <div class="col">
               Ant -> flat 3
@@ -34,7 +34,7 @@
         </button>
       </div>
       <div class="card mt-2">
-        <button (click)="select('P', 'button_three')" class="btn btn-outline-secondary">
+        <button (click)="select('P', 'button_three')" class="btn btn-outline-secondary text-left">
           <div class="row">
             <div class="col">
               Post
@@ -46,10 +46,10 @@
         </button>
       </div>
       <div class="card mt-2">
-        <button (click)="select('P/C', 'button_four')" class="btn btn-outline-secondary">
+        <button (click)="select('P/C', 'button_four')" class="btn btn-outline-secondary text-left">
           <div class="row">
             <div class="col">
-              Post
+              Combined
             </div>
             <div class="col">
               <div *ngIf="button_four == true"><b>:</b></div>
@@ -79,7 +79,7 @@
             </div>
           </div>
           <div class="col-3 text-right">
-            <button class="btn btn-outline-dark" (click)="presentModal()" outline>Pics</button>
+            <button class="btn btn-outline-dark" (click)="showImages()" outline>Pics</button>
           </div>
         </div>
       </div>

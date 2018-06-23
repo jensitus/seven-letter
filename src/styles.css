@@ -1,3 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
+
+.intermediate_result {
+  padding: 8px;
+  background: #ffffff;
+  font-size: 10px;
+}

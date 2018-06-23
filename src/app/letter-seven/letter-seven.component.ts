@@ -58,6 +58,7 @@ export class LetterSevenComponent implements OnInit {
       // this.p = this.p + 1;
       // this.c = this.c + 1;
       this.c_modifier = true;
+      this.param_7 = 'Yes';
     } else {
       this.c_modifier = false;
       this.param_7 = '0';
@@ -70,12 +71,8 @@ export class LetterSevenComponent implements OnInit {
     localStorage.setItem('a', this.a.toString());
     localStorage.setItem('p', this.p.toString());
     localStorage.setItem('c', this.c.toString());
-    if (this.c_modifier) {
-      localStorage.setItem('c_modifier', 'true');
-    } else {
-      localStorage.setItem('c_modifier', 'false');
-    }
-
+    localStorage.setItem('c_modifier', String(this.c_modifier));
+    console.log('C-MODI + ' + this.c_modifier);
     this.router.navigate(['result']).then().catch();
   }
 

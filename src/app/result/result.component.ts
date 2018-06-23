@@ -10,7 +10,7 @@ export class ResultComponent implements OnInit {
   a: number;
   p: number;
   c: number;
-  c_modifier: boolean;
+  c_modifier: string;
   conclusio: string;
   currentColor: string;
   letter_one: string;
@@ -25,13 +25,15 @@ export class ResultComponent implements OnInit {
     this.a = Number(localStorage.getItem('a'));
     this.p = Number(localStorage.getItem('p'));
     this.c = Number(localStorage.getItem('c'));
-    this.c_modifier = Boolean(localStorage.getItem('c_modifier'));
+    this.c_modifier = localStorage.getItem('c_modifier');
     console.log('result a: ' + this.a);
     console.log('result p: ' + this.p);
     console.log('result c: ' + this.c);
+    console.log('c_modifier: ' + this.c_modifier);
+
     this.currentColor = 'primary';
 
-    if (this.c_modifier === true) {
+    if (this.c_modifier === 'true') {
       this.conclusio = 'A combined approach is recommended';
     } else if ((this.a > this.p) && (this.c < 2)) {
       this.conclusio = 'Anterior approach recommended';
@@ -58,6 +60,7 @@ export class ResultComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
 }

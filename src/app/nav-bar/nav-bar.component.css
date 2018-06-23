@@ -1,3 +1,11 @@
 .backlink {
   cursor: pointer;
 }
+
+a {
+  color: black;
+}
+
+.logo {
+  height: 40px;
+}
