@@ -23,7 +23,7 @@ export class ImageViewerComponent implements OnInit {
       },
       {
         image: '../assets/imgs/FlattypeMRTsag.jpeg',
-        title: 'Flattype sagital'
+        title: 'Flattype sagittal'
       },
       {
         image: '../assets/imgs/HilltypeCTaxial.jpg',
