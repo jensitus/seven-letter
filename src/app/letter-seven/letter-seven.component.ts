@@ -79,4 +79,7 @@ export class LetterSevenComponent implements OnInit {
   ngOnInit() {
   }
 
+  showImages(letter) {
+    this.router.navigate(['images'], {queryParams: { letter: letter }}).then().catch();
+  }
 }

@@ -6,6 +6,40 @@ a {
   color: black;
 }
 
+.link {
+  cursor: pointer;
+}
+
 .logo {
   height: 40px;
+}
+
+@media screen and (min-width: 770px) {
+  #bottom-nav {
+    display: none;
+  }
+
+  #top-nav-mobile {
+    display: none;
+  }
+
+  #top-nav-desk {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  #bottom-nav {
+    display: block;
+    border-top: 1px solid;
+    border-color: #000000;
+  }
+
+  #top-nav-mobile {
+    display: block;
+  }
+
+  #top-nav-desk {
+    display: none;
+  }
 }

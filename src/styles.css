@@ -5,5 +5,19 @@
 .intermediate_result {
   padding: 8px;
   background: #ffffff;
-  font-size: 10px;
+  font-size: 12px;
 }
+
+.one_header {
+  padding: 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 770px) {
+  body {
+    margin-bottom: 60px;
+  }
+
+}
+

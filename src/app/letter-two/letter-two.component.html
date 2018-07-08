@@ -6,14 +6,14 @@
       <!--<div class="one_header bg-secondary">Compression</div>-->
       <!--</div>-->
 
-      <div class="card mt-2">
+      <div class="card mt-3">
         <div class="one_header">
           2 Extension
         </div>
       </div>
-      <div class="card mt-2">
+      <div class="card mt-3 border-0">
 
-        <button (click)="select('A', 'button_one')" class="btn btn-outline-secondary">
+        <button (click)="select('A', 'button_one')" class="btn btn-outline-secondary text-left">
           <div class="row">
             <div class="col">
               < 3
@@ -25,9 +25,9 @@
 
         </button>
       </div>
-      <div class="card mt-2">
+      <div class="card mt-3 border-0">
 
-        <button (click)="select('A / P', 'button_two')" class="btn btn-outline-secondary">
+        <button (click)="select('A / P', 'button_two')" class="btn btn-outline-secondary text-left">
           <div class="row">
             <div class="col">
               3
@@ -39,8 +39,8 @@
         </button>
       </div>
 
-      <div class="card mt-2">
-        <button (click)="select('P', 'button_three')" class="btn btn-outline-secondary">
+      <div class="card mt-3 border-0">
+        <button (click)="select('P', 'button_three')" class="btn btn-outline-secondary text-left">
           <div class="row">
             <div class="col">
               > 3
@@ -52,26 +52,27 @@
         </button>
       </div>
 
-      <div class="card mt-2">
+      <div class="card intermediate_result mt-3">
+        <div class="row">
+          <div class="col center text-center">
+            A: {{a}}
+          </div>
+          <div class="col center text-center">
+            P: {{p}}
+          </div>
+          <div class="col center text-center">
+            C: {{c}}
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-3 border-0">
         <div class="row">
           <div class="col-3 center text-left">
             <button class="btn btn-outline-dark" (click)="goToNext()" [disabled]="!isenabled">Next</button>
           </div>
           <div class="col-7 center text-center">
-            <div class="card intermediate_result">
-              <div class="row">
-                <div class="col center text-center">
-                  A: {{a}}
-                </div>
-                <div class="col center text-center">
-                  P: {{p}}
-                </div>
-                <div class="col center text-center">
-                  C: {{c}}
-                </div>
-              </div>
 
-            </div>
           </div>
           <div class="col center text-right">
 

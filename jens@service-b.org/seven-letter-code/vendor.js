@@ -331,7 +331,7 @@ var Location = /** @class */ (function () {
        * Changes the browsers URL to the normalized version of the given URL, and pushes a
        * new item onto the platform's history.
        */
-    Location.prototype.go = 
+    Location.prototype.go =
     // TODO: rename this method to pushState
     /**
        * Changes the browsers URL to the normalized version of the given URL, and pushes a
@@ -17546,7 +17546,7 @@ var NgModuleProviderAnalyzer = /** @class */ (function () {
             var ngModuleProvider = { token: { identifier: ngModuleType }, useClass: ngModuleType };
             _resolveProviders([ngModuleProvider], ProviderAstType.PublicService, true, sourceSpan, _this._errors, _this._allProviders, /* isModule */ true);
         });
-        _resolveProviders(ngModule.transitiveModule.providers.map(function (entry) { return entry.provider; }).concat(extraProviders), ProviderAstType.PublicService, false, sourceSpan, this._errors, this._allProviders, 
+        _resolveProviders(ngModule.transitiveModule.providers.map(function (entry) { return entry.provider; }).concat(extraProviders), ProviderAstType.PublicService, false, sourceSpan, this._errors, this._allProviders,
         /* isModule */ false);
     }
     NgModuleProviderAnalyzer.prototype.parse = function () {
@@ -17629,11 +17629,11 @@ var NgModuleProviderAnalyzer = /** @class */ (function () {
                 this.reflector.resolveExternalReference(Identifiers.Injector) ||
                 tokenReference(dep.token) ===
                     this.reflector.resolveExternalReference(Identifiers.ComponentFactoryResolver)) {
-                
+
                 // access providers
             }
             else if (this._getOrCreateLocalProvider(dep.token, eager) != null) {
-                
+
             }
         }
         return dep;
@@ -19918,7 +19918,7 @@ var ShadowCss = /** @class */ (function () {
                     _this._scopeSelector(rule.selector, scopeSelector, hostSelector, _this.strictStyling);
             }
             else if (rule.selector.startsWith('@media') || rule.selector.startsWith('@supports') ||
-                rule.selector.startsWith('@page') || rule.selector.startsWith('@document')) {
+                rule.selector.startsWith('@letter') || rule.selector.startsWith('@document')) {
                 content = _this._scopeSelectors(rule.content, scopeSelector, hostSelector);
             }
             return new CssRule(selector, content);
@@ -21517,7 +21517,7 @@ var ConvertActionBindingResult = /** @class */ (function () {
     /**
      * Render2 compatible statements,
      */
-    stmts, 
+    stmts,
     /**
      * Variable name used with render2 compatible statements.
      */
@@ -23836,15 +23836,15 @@ function compileNgModule(ctx, ngModule, injectableCompiler) {
     });
     var injectorDef = importExpr(Identifiers$1.defineInjector).callFn([injectorDefArg]);
     ctx.statements.push(new ClassStmt(
-    /* name */ className, 
-    /* parent */ null, 
+    /* name */ className,
+    /* parent */ null,
     /* fields */ [new ClassField(
-        /* name */ 'ngInjectorDef', 
-        /* type */ INFERRED_TYPE, 
-        /* modifiers */ [StmtModifier.Static], 
-        /* initializer */ injectorDef)], 
-    /* getters */ [], 
-    /* constructorMethod */ new ClassMethod(null, [], []), 
+        /* name */ 'ngInjectorDef',
+        /* type */ INFERRED_TYPE,
+        /* modifiers */ [StmtModifier.Static],
+        /* initializer */ injectorDef)],
+    /* getters */ [],
+    /* constructorMethod */ new ClassMethod(null, [], []),
     /* methods */ []));
 }
 
@@ -23914,15 +23914,15 @@ function compileDirective(outputCtx, directive, reflector, bindingParser, mode) 
     if (mode === 0 /* PartialClass */) {
         // Create the partial class to be merged with the actual class.
         outputCtx.statements.push(new ClassStmt(
-        /* name */ className, 
-        /* parent */ null, 
+        /* name */ className,
+        /* parent */ null,
         /* fields */ [new ClassField(
-            /* name */ definitionField, 
-            /* type */ INFERRED_TYPE, 
-            /* modifiers */ [StmtModifier.Static], 
-            /* initializer */ definitionFunction)], 
-        /* getters */ [], 
-        /* constructorMethod */ new ClassMethod(null, [], []), 
+            /* name */ definitionField,
+            /* type */ INFERRED_TYPE,
+            /* modifiers */ [StmtModifier.Static],
+            /* initializer */ definitionFunction)],
+        /* getters */ [],
+        /* constructorMethod */ new ClassMethod(null, [], []),
         /* methods */ []));
     }
     else {
@@ -23954,7 +23954,7 @@ function compileComponent(outputCtx, component, pipeSummaries, template, reflect
     if (firstSelector) {
         var selectorAttributes = firstSelector.getAttrs();
         if (selectorAttributes.length) {
-            field('attrs', outputCtx.constantPool.getConstLiteral(literalArr(selectorAttributes.map(function (value) { return value != null ? literal(value) : literal(undefined); })), 
+            field('attrs', outputCtx.constantPool.getConstLiteral(literalArr(selectorAttributes.map(function (value) { return value != null ? literal(value) : literal(undefined); })),
             /* forceShared */ true));
         }
     }
@@ -23998,15 +23998,15 @@ function compileComponent(outputCtx, component, pipeSummaries, template, reflect
         className || error("Cannot resolver the name of " + component.type);
         // Create the partial class to be merged with the actual class.
         outputCtx.statements.push(new ClassStmt(
-        /* name */ className, 
-        /* parent */ null, 
+        /* name */ className,
+        /* parent */ null,
         /* fields */ [new ClassField(
-            /* name */ definitionField, 
-            /* type */ INFERRED_TYPE, 
-            /* modifiers */ [StmtModifier.Static], 
-            /* initializer */ definitionFunction)], 
-        /* getters */ [], 
-        /* constructorMethod */ new ClassMethod(null, [], []), 
+            /* name */ definitionField,
+            /* type */ INFERRED_TYPE,
+            /* modifiers */ [StmtModifier.Static],
+            /* initializer */ definitionFunction)],
+        /* getters */ [],
+        /* constructorMethod */ new ClassMethod(null, [], []),
         /* methods */ []));
     }
     else {
@@ -25021,15 +25021,15 @@ function compilePipe(outputCtx, pipe, reflector, mode) {
     var definitionFunction = importExpr(Identifiers$1.definePipe).callFn([literalMap(definitionMapValues)]);
     if (mode === 0 /* PartialClass */) {
         outputCtx.statements.push(new ClassStmt(
-        /* name */ className, 
-        /* parent */ null, 
+        /* name */ className,
+        /* parent */ null,
         /* fields */ [new ClassField(
-            /* name */ definitionField, 
-            /* type */ INFERRED_TYPE, 
-            /* modifiers */ [StmtModifier.Static], 
-            /* initializer */ definitionFunction)], 
-        /* getters */ [], 
-        /* constructorMethod */ new ClassMethod(null, [], []), 
+            /* name */ definitionField,
+            /* type */ INFERRED_TYPE,
+            /* modifiers */ [StmtModifier.Static],
+            /* initializer */ definitionFunction)],
+        /* getters */ [],
+        /* constructorMethod */ new ClassMethod(null, [], []),
         /* methods */ []));
     }
     else {
@@ -25578,7 +25578,7 @@ var StaticSymbolResolver = /** @class */ (function () {
                             return self.getStaticSymbol(topLevelPath, name_1);
                         }
                         // ambient value
-                        
+
                     }
                 }
                 else if (symbolic === 'error') {
@@ -27069,7 +27069,7 @@ var StaticReflector = /** @class */ (function () {
                     var requiredAnnotationTypes = this.annotationForParentClassWithSummaryKind.get(summary.type.summaryKind);
                     var typeHasRequiredAnnotation = requiredAnnotationTypes.some(function (requiredType) { return ownAnnotations_1.some(function (ann) { return requiredType.isTypeOf(ann); }); });
                     if (!typeHasRequiredAnnotation) {
-                        this.reportError(formatMetadataError(metadataError("Class " + type.name + " in " + type.filePath + " extends from a " + CompileSummaryKind[summary.type.summaryKind] + " in another compilation unit without duplicating the decorator", 
+                        this.reportError(formatMetadataError(metadataError("Class " + type.name + " in " + type.filePath + " extends from a " + CompileSummaryKind[summary.type.summaryKind] + " in another compilation unit without duplicating the decorator",
                         /* summary */ undefined, "Please add a " + requiredAnnotationTypes.map(function (type) { return type.ngMetadataName; }).join(' or ') + " decorator to the class"), type), type);
                     }
                 }
@@ -30518,7 +30518,7 @@ var ReflectionCapabilities = /** @class */ (function () {
     };
     // There is not a concept of import uri in Js, but this is useful in developing Dart applications.
     // There is not a concept of import uri in Js, but this is useful in developing Dart applications.
-    ReflectionCapabilities.prototype.importUri = 
+    ReflectionCapabilities.prototype.importUri =
     // There is not a concept of import uri in Js, but this is useful in developing Dart applications.
     function (type) {
         // StaticSymbol
@@ -30927,7 +30927,7 @@ function resolveToken(token, record, records, parent, notFoundValue, flags) {
                     var childRecord = options & 2 /* CheckSelf */ ? records.get(depRecord.token) : undefined;
                     deps.push(tryResolveToken(
                     // Current Token to resolve
-                    depRecord.token, childRecord, records, 
+                    depRecord.token, childRecord, records,
                     // If we don't know how to resolve dependency and we should not check parent for it,
                     // than pass in Null injector.
                     !childRecord && !(options & 4 /* CheckParent */) ? NULL_INJECTOR : parent, options & 1 /* Optional */ ? null : Injector.THROW_IF_NOT_FOUND, 0 /* Default */));
@@ -32964,7 +32964,7 @@ var Console = /** @class */ (function () {
     };
     // Note: for reporting errors use `DOM.logError()` as it is platform specific
     // Note: for reporting errors use `DOM.logError()` as it is platform specific
-    Console.prototype.warn = 
+    Console.prototype.warn =
     // Note: for reporting errors use `DOM.logError()` as it is platform specific
     function (message) {
         // tslint:disable-next-line:no-console
@@ -33836,7 +33836,7 @@ var NoopNgZone = /** @class */ (function () {
 /**
  * The Testability service provides testing hooks that can be accessed from
  * the browser and by services such as Protractor. Each bootstrapped Angular
- * application on the page will have an instance of Testability.
+ * application on the letter will have an instance of Testability.
  * @experimental
  */
 var Testability = /** @class */ (function () {
@@ -34326,11 +34326,11 @@ function getPlatform() {
     return _platform && !_platform.destroyed ? _platform : null;
 }
 /**
- * The Angular platform is the entry point for Angular on a web page. Each page
+ * The Angular platform is the entry point for Angular on a web letter. Each letter
  * has exactly one platform, and services (such as reflection) which are common
- * to every Angular application running on the page are bound in its scope.
+ * to every Angular application running on the letter are bound in its scope.
  *
- * A page's platform is initialized implicitly when a platform is created via a platform factory
+ * A letter's platform is initialized implicitly when a platform is created via a platform factory
  * (e.g. {@link platformBrowser}), or explicitly by calling the {@link createPlatform} function.
  *
  *
@@ -34525,24 +34525,24 @@ var PlatformRef = /** @class */ (function () {
     Object.defineProperty(PlatformRef.prototype, "injector", {
         /**
          * Retrieve the platform {@link Injector}, which is the parent injector for
-         * every Angular application on the page and provides singleton providers.
+         * every Angular application on the letter and provides singleton providers.
          */
         get: /**
            * Retrieve the platform {@link Injector}, which is the parent injector for
-           * every Angular application on the page and provides singleton providers.
+           * every Angular application on the letter and provides singleton providers.
            */
         function () { return this._injector; },
         enumerable: true,
         configurable: true
     });
     /**
-     * Destroy the Angular platform and all Angular applications on the page.
+     * Destroy the Angular platform and all Angular applications on the letter.
      */
     /**
-       * Destroy the Angular platform and all Angular applications on the page.
+       * Destroy the Angular platform and all Angular applications on the letter.
        */
     PlatformRef.prototype.destroy = /**
-       * Destroy the Angular platform and all Angular applications on the page.
+       * Destroy the Angular platform and all Angular applications on the letter.
        */
     function () {
         if (this._destroyed) {
@@ -34605,7 +34605,7 @@ function optionsReducer(dst, objs) {
     return dst;
 }
 /**
- * A reference to an Angular application running on a page.
+ * A reference to an Angular application running on a letter.
  *
  *
  */
@@ -36479,7 +36479,7 @@ var _DuplicateItemRecordList = /** @class */ (function () {
     // IterableChangeRecord_.currentIndex >= atOrAfterIndex
     // Returns a IterableChangeRecord_ having IterableChangeRecord_.trackById == trackById and
     // IterableChangeRecord_.currentIndex >= atOrAfterIndex
-    _DuplicateItemRecordList.prototype.get = 
+    _DuplicateItemRecordList.prototype.get =
     // Returns a IterableChangeRecord_ having IterableChangeRecord_.trackById == trackById and
     // IterableChangeRecord_.currentIndex >= atOrAfterIndex
     function (trackById, atOrAfterIndex) {
@@ -36842,7 +36842,7 @@ var DefaultKeyValueDiffer = /** @class */ (function () {
     };
     // Add the record or a given key to the list of changes only when the value has actually changed
     // Add the record or a given key to the list of changes only when the value has actually changed
-    DefaultKeyValueDiffer.prototype._maybeAddToChanges = 
+    DefaultKeyValueDiffer.prototype._maybeAddToChanges =
     // Add the record or a given key to the list of changes only when the value has actually changed
     function (record, newValue) {
         if (!looseIdentical(newValue, record.currentValue)) {
@@ -37915,7 +37915,7 @@ var SAFE_STYLE_VALUE = new RegExp("^(" + VALUES + "|" +
  * definition.
  *
  * Angular only allows binding CSS values (as opposed to entire CSS rules), so it is unlikely that
- * binding a URL value without further cooperation from the page will cause an information leak, and
+ * binding a URL value without further cooperation from the letter will cause an information leak, and
  * if so, it is just a leak, not a full blown XSS vulnerability.
  *
  * Given the common use case, low likelihood of attack vector, and low impact of an attack, this
@@ -39166,7 +39166,7 @@ function getComponentViewDefinitionFactory(componentFactory) {
 var ComponentFactory_ = /** @class */ (function (_super) {
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"])(ComponentFactory_, _super);
     function ComponentFactory_(selector, componentType, viewDefFactory, _inputs, _outputs, ngContentSelectors) {
-        var _this = 
+        var _this =
         // Attention: this ctor is called as top level function.
         // Putting any logic in here will destroy closure tree shaking!
         _super.call(this) || this;
@@ -42114,7 +42114,7 @@ function createNgModuleFactory(ngModuleType, bootstrapComponents, defFactory) {
 var NgModuleFactory_ = /** @class */ (function (_super) {
     Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"])(NgModuleFactory_, _super);
     function NgModuleFactory_(moduleType, _bootstrapComponents, _ngModuleDefFactory) {
-        var _this = 
+        var _this =
         // Attention: this ctor is called as top level function.
         // Putting any logic in here will destroy closure tree shaking!
         _super.call(this) || this;
@@ -48123,7 +48123,7 @@ var BrowserDomAdapter = /** @class */ (function (_super) {
     };
     // TODO(tbosch): move this into a separate environment class once we have it
     // TODO(tbosch): move this into a separate environment class once we have it
-    BrowserDomAdapter.prototype.logError = 
+    BrowserDomAdapter.prototype.logError =
     // TODO(tbosch): move this into a separate environment class once we have it
     function (error) {
         if (window.console) {
@@ -48413,7 +48413,7 @@ var BrowserDomAdapter = /** @class */ (function (_super) {
     BrowserDomAdapter.prototype.getComputedStyle = function (element) { return getComputedStyle(element); };
     // TODO(tbosch): move this into a separate environment class once we have it
     // TODO(tbosch): move this into a separate environment class once we have it
-    BrowserDomAdapter.prototype.supportsWebAnimation = 
+    BrowserDomAdapter.prototype.supportsWebAnimation =
     // TODO(tbosch): move this into a separate environment class once we have it
     function () {
         return typeof Element.prototype['animate'] === 'function';
@@ -48506,7 +48506,7 @@ var BrowserPlatformLocation = /** @class */ (function (_super) {
     /** @internal */
     // This is moved to its own method so that `MockPlatformLocationStrategy` can overwrite it
     /** @internal */
-    BrowserPlatformLocation.prototype._init = 
+    BrowserPlatformLocation.prototype._init =
     // This is moved to its own method so that `MockPlatformLocationStrategy` can overwrite it
     /** @internal */
     function () {
@@ -48632,7 +48632,7 @@ var Meta = /** @class */ (function () {
             var selector = this._parseSelector(meta);
             var elem = (this.getTag(selector));
             // It's allowed to have multiple elements with the same name so it's not enough to
-            // just check that element with the same name already present on the page. We also need to
+            // just check that element with the same name already present on the letter. We also need to
             // check if element has tag attributes
             if (elem && this._containsAttributes(meta, elem))
                 return elem;
@@ -49460,7 +49460,7 @@ var DomEventsPlugin = /** @class */ (function (_super) {
     // events.
     // This plugin should come last in the list of plugins, because it accepts all
     // events.
-    DomEventsPlugin.prototype.supports = 
+    DomEventsPlugin.prototype.supports =
     // This plugin should come last in the list of plugins, because it accepts all
     // events.
     function (eventName) { return true; };
@@ -50118,21 +50118,21 @@ var BrowserModule = /** @class */ (function () {
     }
     /**
      * Configures a browser-based application to transition from a server-rendered app, if
-     * one is present on the page. The specified parameters must include an application id,
+     * one is present on the letter. The specified parameters must include an application id,
      * which must match between the client and server applications.
      *
      * @experimental
      */
     /**
        * Configures a browser-based application to transition from a server-rendered app, if
-       * one is present on the page. The specified parameters must include an application id,
+       * one is present on the letter. The specified parameters must include an application id,
        * which must match between the client and server applications.
        *
        * @experimental
        */
     BrowserModule.withServerTransition = /**
        * Configures a browser-based application to transition from a server-rendered app, if
-       * one is present on the page. The specified parameters must include an application id,
+       * one is present on the letter. The specified parameters must include an application id,
        * which must match between the client and server applications.
        *
        * @experimental
@@ -50242,7 +50242,7 @@ var AngularProfiler = /** @class */ (function () {
        * ng.profiler.timeChangeDetection({record: true})
        * ```
        */
-    AngularProfiler.prototype.timeChangeDetection = 
+    AngularProfiler.prototype.timeChangeDetection =
     // tslint:disable:no-console
     /**
        * Exercises change detection in a loop and then prints the average amount of
@@ -51871,7 +51871,7 @@ var UrlParser = /** @class */ (function () {
     // ie `name;k1=v1;k2`
     // parse a segment with its matrix parameters
     // ie `name;k1=v1;k2`
-    UrlParser.prototype.parseSegment = 
+    UrlParser.prototype.parseSegment =
     // parse a segment with its matrix parameters
     // ie `name;k1=v1;k2`
     function () {
@@ -51907,7 +51907,7 @@ var UrlParser = /** @class */ (function () {
     };
     // Parse a single query parameter `name[=value]`
     // Parse a single query parameter `name[=value]`
-    UrlParser.prototype.parseQueryParam = 
+    UrlParser.prototype.parseQueryParam =
     // Parse a single query parameter `name[=value]`
     function (params) {
         var key = matchQueryParams(this.remaining);
@@ -51941,7 +51941,7 @@ var UrlParser = /** @class */ (function () {
     };
     // parse `(a/b//outlet_name:c/d)`
     // parse `(a/b//outlet_name:c/d)`
-    UrlParser.prototype.parseParens = 
+    UrlParser.prototype.parseParens =
     // parse `(a/b//outlet_name:c/d)`
     function (allowPrimary) {
         var segments = {};
@@ -51973,7 +51973,7 @@ var UrlParser = /** @class */ (function () {
     UrlParser.prototype.peekStartsWith = function (str) { return this.remaining.startsWith(str); };
     // Consumes the prefix when it is present and returns whether it has been consumed
     // Consumes the prefix when it is present and returns whether it has been consumed
-    UrlParser.prototype.consumeOptional = 
+    UrlParser.prototype.consumeOptional =
     // Consumes the prefix when it is present and returns whether it has been consumed
     function (str) {
         if (this.peekStartsWith(str)) {
@@ -52094,7 +52094,7 @@ var ApplyRedirects = /** @class */ (function () {
     };
     // Recursively expand segment groups for all the child outlets
     // Recursively expand segment groups for all the child outlets
-    ApplyRedirects.prototype.expandChildren = 
+    ApplyRedirects.prototype.expandChildren =
     // Recursively expand segment groups for all the child outlets
     function (ngModule, routes, segmentGroup) {
         var _this = this;
@@ -54885,7 +54885,7 @@ var ActivateRoutes = /** @class */ (function () {
     };
     // De-activate the child route that are not re-used for the future state
     // De-activate the child route that are not re-used for the future state
-    ActivateRoutes.prototype.deactivateChildRoutes = 
+    ActivateRoutes.prototype.deactivateChildRoutes =
     // De-activate the child route that are not re-used for the future state
     function (futureNode, currNode, contexts) {
         var _this = this;
@@ -55827,7 +55827,7 @@ var RouterPreloader = /** @class */ (function () {
     // TODO(jasonaden): This class relies on code external to the class to call setUpPreloading. If
     // this hasn't been done, ngOnDestroy will fail as this.subscription will be undefined. This
     // should be refactored.
-    RouterPreloader.prototype.ngOnDestroy = 
+    RouterPreloader.prototype.ngOnDestroy =
     // TODO(jasonaden): This class relies on code external to the class to call setUpPreloading. If
     // this hasn't been done, ngOnDestroy will fail as this.subscription will be undefined. This
     // should be refactored.

@@ -11,17 +11,13 @@ export class NavBarComponent implements OnInit {
 
   @Input() public title: string;
   @Input() public bg: string;
-
-  navback: string;
-  navbar_title: string;
+  @Input() public home: string;
 
   constructor(private location: Location, private router: Router) {
-
-    // this.navback = localStorage.getItem('navback');
-    // this.navbar_title = localStorage.getItem('navbar_title');
   }
 
   backClick() {
+    console.log(this.location);
     this.location.back();
   }
 
@@ -29,9 +25,13 @@ export class NavBarComponent implements OnInit {
     this.router.navigate(['home']).then().catch();
   }
 
+  imprint() {
+    this.router.navigate(['imprint']).then().catch();
+  }
+
   ngOnInit() {
-    this.navback = 'light';
-    this.navbar_title = '7 L C';
+    console.log(this.home);
+    console.log(typeof this.home);
   }
 
 }
