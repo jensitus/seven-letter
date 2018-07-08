@@ -17,20 +17,24 @@ import { ResultComponent } from './result/result.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ImageViewerComponent } from './image-viewer/image-viewer.component';
+import {AngularFontAwesomeModule} from 'angular-font-awesome';
+import { ImprintComponent } from './imprint/imprint.component';
+
 
 
 const app_routes: Routes = [
-  { path: 'one',    component:   LetterOneComponent        },
-  { path: 'home',   component:   HomeComponent             },
-  { path: '',       redirectTo:  'home', pathMatch: 'full' },
-  { path: 'two',    component:   LetterTwoComponent        },
-  { path: 'three',  component:   LetterThreeComponent      },
-  { path: 'four',   component:   LetterFourComponent       },
-  { path: 'five',   component:   LetterFiveComponent       },
-  { path: 'six',    component:   LetterSixComponent        },
-  { path: 'seven',  component:   LetterSevenComponent      },
-  { path: 'result', component:   ResultComponent           },
-  { path: 'images', component:   ImageViewerComponent      }
+  { path: 'one',     component:   LetterOneComponent        },
+  { path: 'home',    component:   HomeComponent             },
+  { path: '',        redirectTo:  'home', pathMatch: 'full' },
+  { path: 'two',     component:   LetterTwoComponent        },
+  { path: 'three',   component:   LetterThreeComponent      },
+  { path: 'four',    component:   LetterFourComponent       },
+  { path: 'five',    component:   LetterFiveComponent       },
+  { path: 'six',     component:   LetterSixComponent        },
+  { path: 'seven',   component:   LetterSevenComponent      },
+  { path: 'result',  component:   ResultComponent           },
+  { path: 'images',  component:   ImageViewerComponent      },
+  { path: 'imprint', component:   ImprintComponent          }
 ];
 
 
@@ -47,12 +51,14 @@ const app_routes: Routes = [
     LetterSixComponent,
     LetterSevenComponent,
     ResultComponent,
-    ImageViewerComponent
+    ImageViewerComponent,
+    ImprintComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(app_routes, { enableTracing: true }),
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -86,11 +86,14 @@ export class LetterOneComponent implements OnInit {
     localStorage.setItem('p1', this.p.toString());
     localStorage.setItem('c1', this.c.toString());
     this.router.navigate(['two']);
-
   }
 
-  showImages() {
-    this.router.navigate(['images']).then().catch();
+  showImages(letter) {
+    this.router.navigate(['images'], {queryParams: {letter: letter}}).then((success) =>
+      console.log(success)
+    ).catch((error) =>
+      console.log(error)
+    );
   }
 
 }

@@ -2,12 +2,12 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-      <div class="card mt-2">
+      <div class="card mt-3">
         <div class="one_header">
           4 Instability
         </div>
       </div>
-      <div class="card mt-2">
+      <div class="card mt-3 border-0">
 
         <button (click)="select('A / P', 'button_one')" class="btn btn-outline-warning text-left">
           <div class="row">
@@ -20,7 +20,7 @@
           </div>
         </button>
       </div>
-      <div class="card mt-2">
+      <div class="card mt-3 border-0">
         <button (click)="select('C', 'button_two')" class="btn btn-outline-warning text-left">
           <div class="row">
             <div class="col">
@@ -33,26 +33,27 @@
         </button>
       </div>
 
-      <div class="card mt-2">
+      <div class="card intermediate_result mt-3">
+        <div class="row">
+          <div class="col center text-center">
+            A: {{a}}
+          </div>
+          <div class="col center text-center">
+            P: {{p}}
+          </div>
+          <div class="col center text-center">
+            C: {{c}}
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-3 border-0">
         <div class="row">
           <div class="col-3 center text-left">
             <button class="btn btn-outline-warning" (click)="goToNext()" [disabled]="!isenabled">Next</button>
           </div>
           <div class="col-6 center text-center">
-            <div class="card intermediate_result">
-              <div class="row">
-                <div class="col center text-center">
-                  A: {{a}}
-                </div>
-                <div class="col center text-center">
-                  P: {{p}}
-                </div>
-                <div class="col center text-center">
-                  C: {{c}}
-                </div>
-              </div>
 
-            </div>
           </div>
           <div class="col-2 center text-right">
 
