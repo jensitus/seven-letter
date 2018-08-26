@@ -20,6 +20,7 @@ export class LetterFourComponent implements OnInit {
   c4: number;
   button_one: boolean;
   button_two: boolean;
+  button_three: boolean;
   private currentColor: string;
   isenabled: boolean;
 
@@ -50,9 +51,15 @@ export class LetterFourComponent implements OnInit {
     if (button === 'button_one') {
       this.button_one = true;
       this.button_two = false;
+      this.button_three = false;
     } else if (button === 'button_two') {
       this.button_one = false;
       this.button_two = true;
+      this.button_three = false;
+    } else if (button === 'button_three') {
+      this.button_one = false;
+      this.button_two = false;
+      this.button_three = true;
     }
     this.isenabled = true;
     this.a4 = this.a;
