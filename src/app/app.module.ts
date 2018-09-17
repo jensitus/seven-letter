@@ -19,6 +19,8 @@ import { environment } from '../environments/environment';
 import { ImageViewerComponent } from './image-viewer/image-viewer.component';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import { ImprintComponent } from './imprint/imprint.component';
+import {ModalModule} from 'ngx-bootstrap';
+import { LetterNavModalComponent } from './letter-nav-modal/letter-nav-modal.component';
 
 
 
@@ -52,13 +54,15 @@ const app_routes: Routes = [
     LetterSevenComponent,
     ResultComponent,
     ImageViewerComponent,
-    ImprintComponent
+    ImprintComponent,
+    LetterNavModalComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(app_routes, { enableTracing: true }),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

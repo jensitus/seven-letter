@@ -25,7 +25,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "/home/jensitus/workspace/sevenletter/seven-letter-code/node_modules/font-awesome/css/font-awesome.css"
+              "/home/jensitus/workspace/seven-letter/node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": []
           },

@@ -71,7 +71,7 @@ export class LetterFiveComponent implements OnInit {
     localStorage.setItem('a5', this.a5.toString());
     localStorage.setItem('p5', this.p5.toString());
     localStorage.setItem('c5', this.c5.toString());
-    this.router.navigate(['six']);
+    this.router.navigate(['six']).then().catch();
   }
 
   ngOnInit() {
