@@ -21,7 +21,7 @@ export class LetterNavModalComponent implements OnInit {
   }
 
   openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
+    this.modalRef = this.modalService.show(template, Object.assign({}, { class: 'gray modal-sm' }));
   }
 
   goToLetter(letterNav: string) {
