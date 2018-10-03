@@ -8,6 +8,8 @@ import {Router} from '@angular/router';
 })
 export class LetterOneComponent implements OnInit {
 
+  seven_letter_choice_1: string;
+  button: string;
   p: number;
   a: number;
   c: number;
@@ -18,7 +20,6 @@ export class LetterOneComponent implements OnInit {
   button_four: boolean;
   private currentColor: string;
   public isenabled: boolean;
-  letthesunshinein: string;
 
   constructor(private router: Router) {
     this.a = 0;
@@ -29,13 +30,15 @@ export class LetterOneComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.letthesunshinein = 'jesus christus';
-    localStorage.clear();
+    this.seven_letter_choice_1 = localStorage.getItem('seven_letter_choice_1');
+    this.button = localStorage.getItem('button_letter_1');
+    this.setButton(this.button);
   }
 
   select(seven_letter_choice_1, button) {
     console.log('letter one: ' + seven_letter_choice_1);
     this.param_1 = seven_letter_choice_1;
+    this.button = button;
     this.a = 0;
     this.p = 0;
     this.c = 0;
@@ -47,6 +50,37 @@ export class LetterOneComponent implements OnInit {
       this.c = this.c + 1;
       this.p = this.p + 1;
     }
+    this.setButton(button);
+    this.isenabled = true;
+    console.log('this.a: ' + this.a);
+    console.log('this.p: ' + this.p);
+    console.log('this.c: ' + this.c);
+    console.log('disabled ' + this.isenabled);
+  }
+
+  goToNext() {
+    console.log('param_1: ' + this.param_1);
+    localStorage.setItem('letter_one', this.param_1);
+    localStorage.setItem('seven_letter_choice_1', this.param_1);
+    localStorage.setItem('button_letter_1', this.button);
+    localStorage.setItem('a', this.a.toString());
+    localStorage.setItem('p', this.p.toString());
+    localStorage.setItem('c', this.c.toString());
+    localStorage.setItem('a1', this.a.toString());
+    localStorage.setItem('p1', this.p.toString());
+    localStorage.setItem('c1', this.c.toString());
+    this.router.navigate(['two']);
+  }
+
+  showImages(letter) {
+    this.router.navigate(['images'], {queryParams: {letter: letter}}).then((success) =>
+      console.log(success)
+    ).catch((error) =>
+      console.log(error)
+    );
+  }
+
+  private setButton(button) {
     if (button === 'button_one') {
       this.button_one = true;
       this.button_two = false;
@@ -68,32 +102,6 @@ export class LetterOneComponent implements OnInit {
       this.button_three = false;
       this.button_four = true;
     }
-    this.isenabled = true;
-    console.log('this.a: ' + this.a);
-    console.log('this.p: ' + this.p);
-    console.log('this.c: ' + this.c);
-    console.log('disabled ' + this.isenabled);
-  }
-
-  goToNext() {
-    console.log('param_1: ' + this.param_1);
-    localStorage.setItem('letter_one', this.param_1);
-    localStorage.setItem('seven_letter_choice_1', this.param_1);
-    localStorage.setItem('a', this.a.toString());
-    localStorage.setItem('p', this.p.toString());
-    localStorage.setItem('c', this.c.toString());
-    localStorage.setItem('a1', this.a.toString());
-    localStorage.setItem('p1', this.p.toString());
-    localStorage.setItem('c1', this.c.toString());
-    this.router.navigate(['two']);
-  }
-
-  showImages(letter) {
-    this.router.navigate(['images'], {queryParams: {letter: letter}}).then((success) =>
-      console.log(success)
-    ).catch((error) =>
-      console.log(error)
-    );
   }
 
 }

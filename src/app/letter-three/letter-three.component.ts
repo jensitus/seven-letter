@@ -9,6 +9,8 @@ import {Router} from '@angular/router';
 export class LetterThreeComponent implements OnInit {
 
   seven_letter_choice_2: string;
+  seven_letter_choice_3: string;
+  button: string;
   param_3: string;
   a: number;
   p: number;
@@ -41,6 +43,7 @@ export class LetterThreeComponent implements OnInit {
   select(seven_letter_choice_3, button) {
     console.log('letter three: ' + seven_letter_choice_3);
     this.param_3 = seven_letter_choice_3;
+    this.button = button;
     this.a = this.a2;
     this.p = this.p2;
     this.c = this.c2;
@@ -51,19 +54,7 @@ export class LetterThreeComponent implements OnInit {
       this.a = this.a + 1;
       this.c = this.c + 1;
     }
-    if (button === 'button_one') {
-      this.button_one = true;
-      this.button_two = false;
-      this.button_three = false;
-    } else if (button === 'button_two') {
-      this.button_one = false;
-      this.button_two = true;
-      this.button_three = false;
-    } else if (button === 'button_three') {
-      this.button_one = false;
-      this.button_two = false;
-      this.button_three = true;
-    }
+    this.setButton(this.button);
     this.isenabled = true;
     this.a3 = this.a;
     this.c3 = this.c;
@@ -77,6 +68,7 @@ export class LetterThreeComponent implements OnInit {
     console.log('param_3: ' + this.param_3);
     localStorage.setItem('letter_three', this.param_3);
     localStorage.setItem('seven_letter_choice_3', this.param_3);
+    localStorage.setItem('button_letter_3', this.button);
     localStorage.setItem('a', this.a.toString());
     localStorage.setItem('p', this.p.toString());
     localStorage.setItem('c', this.c.toString());
@@ -87,6 +79,25 @@ export class LetterThreeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.seven_letter_choice_3 = localStorage.getItem('seven_letter_choice_3');
+    this.button = localStorage.getItem('button_letter_3');
+    this.setButton(this.button);
+  }
+
+  setButton(button) {
+    if (button === 'button_one') {
+      this.button_one = true;
+      this.button_two = false;
+      this.button_three = false;
+    } else if (button === 'button_two') {
+      this.button_one = false;
+      this.button_two = true;
+      this.button_three = false;
+    } else if (button === 'button_three') {
+      this.button_one = false;
+      this.button_two = false;
+      this.button_three = true;
+    }
   }
 
 }
