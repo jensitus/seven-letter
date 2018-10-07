@@ -8,14 +8,10 @@ import {Router} from '@angular/router';
 })
 export class LetterSevenComponent implements OnInit {
   seven_letter_choice_6: string;
+  seven_letter_choice_7: string;
+  button: string;
   param_7: string;
-  a: number;
-  p: number;
-  c: number;
-  a7: number;
-  p7: number;
-  c7: number;
-  c_modifier: boolean;
+  c_modifier: string;
   button_one: boolean;
   private currentColor: string;
   button_two: boolean;
@@ -23,63 +19,58 @@ export class LetterSevenComponent implements OnInit {
 
   constructor(private router: Router) {
     this.seven_letter_choice_6 = localStorage.getItem('seven_letter_choice_6');
-    console.log('seven_letter_choice_6:', this.seven_letter_choice_6);
-    this.a7 = Number(localStorage.getItem('a'));
-    this.p7 = Number(localStorage.getItem('p'));
-    this.c7 = Number(localStorage.getItem('c'));
-    this.a = this.a7;
-    this.p = this.p7;
-    this.c = this.c7;
+    // console.log('seven_letter_choice_6:', this.seven_letter_choice_6);
     this.button_one = false;
     this.button_two = false;
-    this.c_modifier = false;
+    this.c_modifier = '0';
     this.currentColor = 'c_modifier';
     this.isenabled = false;
   }
 
   select(seven_letter_choice_7, button) {
-    console.log('letter three: ' + seven_letter_choice_7);
-    this.param_7 = seven_letter_choice_7;
-    this.a = this.a7;
-    this.p = this.p7;
-    this.c = this.c7;
+    this.seven_letter_choice_7 = seven_letter_choice_7;
+    this.button = button;
     this.isenabled = true;
-    if (button === 'button_one') {
-      this.button_one = true;
-      this.button_two = false;
-      console.log('button_one: ' + this.button_one);
-    } else if (button === 'button_two') {
-      this.button_one = false;
-      this.button_two = true;
-      this.c_modifier = false;
-      console.log('C-MODI + ' + this.c_modifier);
-    }
-    if (seven_letter_choice_7 === 'C' && this.button_one === true) {
-      // this.p = this.p + 1;
-      // this.c = this.c + 1;
-      this.c_modifier = true;
+    this.setButton(this.button);
+    if (seven_letter_choice_7 === 'C') { // && this.button_one === true) {
+      this.c_modifier = 'yes';
       this.param_7 = 'Yes';
     } else {
-      this.c_modifier = false;
+      this.c_modifier = '0';
       this.param_7 = '0';
     }
+    localStorage.setItem('seven_letter_choice_7', this.seven_letter_choice_7);
+    localStorage.setItem('button_letter_7', this.button);
+    localStorage.setItem('c_modifier', this.c_modifier);
+    console.log(this.c_modifier);
   }
 
   goToNext() {
-    console.log('param_7: ' + this.param_7);
-    localStorage.setItem('letter_seven', this.param_7);
-    localStorage.setItem('a', this.a.toString());
-    localStorage.setItem('p', this.p.toString());
-    localStorage.setItem('c', this.c.toString());
-    localStorage.setItem('c_modifier', String(this.c_modifier));
-    console.log('C-MODI + ' + this.c_modifier);
     this.router.navigate(['result']).then().catch();
   }
 
   ngOnInit() {
+    this.seven_letter_choice_7 = localStorage.getItem('seven_letter_choice_7');
+    this.button = localStorage.getItem('button_letter_7');
+    this.setButton(this.button);
+    if (this.button != null) {
+      this.isenabled = true;
+    } else {
+      this.isenabled = false;
+    }
   }
 
   showImages(letter) {
     this.router.navigate(['images'], {queryParams: { letter: letter }}).then().catch();
+  }
+
+  setButton(button) {
+    if (button === 'button_one') {
+      this.button_one = true;
+      this.button_two = false;
+    } else if (button === 'button_two') {
+      this.button_one = false;
+      this.button_two = true;
+    }
   }
 }

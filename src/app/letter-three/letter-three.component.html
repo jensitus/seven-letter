@@ -18,8 +18,8 @@
             <div class="col">
               Lordotic
             </div>
-            <div class="col">
-              <div *ngIf="button_one == true"><b>:</b></div>
+            <div class="col text-right">
+              <div *ngIf="button_one == true"><b><i class="fa fa-check"></i></b></div>
             </div>
           </div>
 
@@ -32,8 +32,8 @@
             <div class="col">
               Kyphotic -> flex or 10°
             </div>
-            <div class="col">
-              <div *ngIf="button_two == true"><b>:</b></div>
+            <div class="col text-right">
+              <div *ngIf="button_two == true"><b><i class="fa fa-check"></i></b></div>
             </div>
           </div>
         </button>
@@ -45,27 +45,28 @@
             <div class="col">
               Kyphotic -> fix or 10°
             </div>
-            <div class="col">
-              <div *ngIf="button_three == true"><b>:</b></div>
+            <div class="col text-right">
+              <div *ngIf="button_three == true"><b><i class="fa fa-check"></i></b></div>
             </div>
           </div>
         </button>
       </div>
 
-      <div class="card intermediate_result mt-3">
-        <div class="row">
-          <div class="col center text-center">
-            A: {{a}}
-          </div>
-          <div class="col center text-center">
-            P: {{p}}
-          </div>
-          <div class="col center text-center">
-            C: {{c}}
-          </div>
-        </div>
-
-      </div>
+      <!--
+            <div class="card intermediate_result mt-3">
+              <div class="row">
+                <div class="col center text-center">
+                  A: {{a}}
+                </div>
+                <div class="col center text-center">
+                  P: {{p}}
+                </div>
+                <div class="col center text-center">
+                  C: {{c}}
+                </div>
+              </div>
+            </div>
+            -->
 
       <div class="card mt-3 border-0">
         <div class="row">
@@ -73,7 +74,7 @@
             <button class="btn btn-outline-warning" (click)="goToNext()" [disabled]="!isenabled">Next</button>
           </div>
           <div class="col-7 center text-center">
-            <app-letter-nav-modal buttoncolor="warning"></app-letter-nav-modal>
+            <!--<app-letter-nav-modal buttoncolor="warning"></app-letter-nav-modal>-->
           </div>
           <div class="col center text-right">
 

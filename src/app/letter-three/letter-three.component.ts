@@ -30,12 +30,6 @@ export class LetterThreeComponent implements OnInit {
   constructor(private router: Router) {
     this.seven_letter_choice_2 = localStorage.getItem('seven_letter_choice_2');
     console.log('P2:', this.seven_letter_choice_2);
-    this.a2 = Number(localStorage.getItem('a2'));
-    this.p2 = Number(localStorage.getItem('p2'));
-    this.c2 = Number(localStorage.getItem('c2'));
-    this.a = this.a2;
-    this.p = this.p2;
-    this.c = this.c2;
     this.currentColor = 'spine';
     this.isenabled = false;
   }
@@ -43,38 +37,17 @@ export class LetterThreeComponent implements OnInit {
   select(seven_letter_choice_3, button) {
     console.log('letter three: ' + seven_letter_choice_3);
     this.param_3 = seven_letter_choice_3;
+    this.seven_letter_choice_3 = seven_letter_choice_3;
     this.button = button;
-    this.a = this.a2;
-    this.p = this.p2;
-    this.c = this.c2;
-    if (seven_letter_choice_3 === 'A / P') {
-      this.a = this.a + 0.5;
-      this.p = this.p + 0.5;
-    } else if (seven_letter_choice_3 === 'A / C') {
-      this.a = this.a + 1;
-      this.c = this.c + 1;
-    }
     this.setButton(this.button);
     this.isenabled = true;
-    this.a3 = this.a;
-    this.c3 = this.c;
-    this.p3 = this.p;
-    console.log('this.a - 3: ' + this.a);
-    console.log('this.p - 3: ' + this.p);
-    console.log('this.c - 3: ' + this.c);
+    localStorage.setItem('letter_three', this.param_3);
+    localStorage.setItem('seven_letter_choice_3', this.seven_letter_choice_3);
+    localStorage.setItem('button_letter_3', this.button);
   }
 
   goToNext() {
     console.log('param_3: ' + this.param_3);
-    localStorage.setItem('letter_three', this.param_3);
-    localStorage.setItem('seven_letter_choice_3', this.param_3);
-    localStorage.setItem('button_letter_3', this.button);
-    localStorage.setItem('a', this.a.toString());
-    localStorage.setItem('p', this.p.toString());
-    localStorage.setItem('c', this.c.toString());
-    localStorage.setItem('a3', this.a3.toString());
-    localStorage.setItem('p3', this.p3.toString());
-    localStorage.setItem('c3', this.c3.toString());
     this.router.navigate(['four']).then();
   }
 
@@ -82,6 +55,11 @@ export class LetterThreeComponent implements OnInit {
     this.seven_letter_choice_3 = localStorage.getItem('seven_letter_choice_3');
     this.button = localStorage.getItem('button_letter_3');
     this.setButton(this.button);
+    if (this.button != null) {
+      this.isenabled = true;
+    } else {
+      this.isenabled = false;
+    }
   }
 
   setButton(button) {

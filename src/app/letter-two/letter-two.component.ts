@@ -8,18 +8,9 @@ import {Router} from '@angular/router';
 })
 export class LetterTwoComponent implements OnInit {
 
-  seven_letter_choice_1: String;
-  seven_letter_choice_2: String;
+  seven_letter_choice_1: string;
+  seven_letter_choice_2: string;
   param_2: string;
-  a: number;
-  p: number;
-  c: number;
-  a1: number;
-  p1: number;
-  c1: number;
-  a2: number;
-  p2: number;
-  c2: number;
   button: string;
   button_one: boolean;
   button_two: boolean;
@@ -29,59 +20,25 @@ export class LetterTwoComponent implements OnInit {
 
   constructor(private router: Router) {
     this.seven_letter_choice_1 = localStorage.getItem('seven_letter_choice_1');
-    this.a1 = Number(localStorage.getItem('a1'));
-    this.p1 = Number(localStorage.getItem('p1'));
-    this.c1 = Number(localStorage.getItem('c1'));
-
-    this.a = this.a1;
-    this.p = this.p1;
-    this.c = this.c1;
     this.currentColor = 'compression';
-    if (this.seven_letter_choice_2 != null) {
-      this.isenabled = true;
-    } else {
-      this.isenabled = false;
-    }
     console.log('P1: ' + this.seven_letter_choice_1);
-    console.log('this.a2' + this.a1);
-    console.log(typeof this.a1);
+    // console.log('this.a2' + this.a1);
+    // console.log(typeof this.a1);
   }
 
   select(seven_letter_choice_2, button) {
     this.param_2 = seven_letter_choice_2;
+    this.seven_letter_choice_2 = seven_letter_choice_2;
     console.log('param_2: ' + this.param_2);
     this.button = button;
-    this.a = this.a1;
-    this.p = this.p1;
-    this.c = this.c1;
-    if (seven_letter_choice_2 === 'A') {
-      this.a = this.a + 1;
-    } else if (seven_letter_choice_2 === 'P') {
-      this.p = this.p + 1;
-    } else if (seven_letter_choice_2 === 'A / P') {
-      this.a = this.a + 0.5;
-      this.p = this.p + 0.5;
-    }
     this.setButton(this.button);
-    this.a2 = this.a;
-    this.p2 = this.p;
-    this.c2 = this.c;
     this.isenabled = true;
-    console.log('this.a - 2: ' + this.a);
-    console.log('this.p - 2: ' + this.p);
-    console.log('this.c - 2: ' + this.c);
+    localStorage.setItem('letter_two', this.param_2);
+    localStorage.setItem('seven_letter_choice_2', this.seven_letter_choice_2);
+    localStorage.setItem('button_letter_2', this.button);
   }
 
   goToNext() {
-    localStorage.setItem('letter_two', this.param_2);
-    localStorage.setItem('seven_letter_choice_2', this.param_2);
-    localStorage.setItem('button_letter_2', this.button);
-    localStorage.setItem('a', this.a.toString());
-    localStorage.setItem('p', this.p.toString());
-    localStorage.setItem('c', this.c.toString());
-    localStorage.setItem('a2', this.a2.toString());
-    localStorage.setItem('p2', this.p2.toString());
-    localStorage.setItem('c2', this.c2.toString());
     this.router.navigate(['three']).then().catch();
   }
 
@@ -91,6 +48,11 @@ export class LetterTwoComponent implements OnInit {
     console.log('choice2: ' + this.seven_letter_choice_2);
     console.log('this.button: ' + this.button);
     this.setButton(this.button);
+    if (this.button != null) {
+      this.isenabled = true;
+    } else {
+      this.isenabled = false;
+    }
   }
 
   private setButton(button) {

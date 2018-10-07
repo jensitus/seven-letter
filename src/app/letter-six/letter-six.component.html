@@ -16,8 +16,8 @@
               Rheumatoid Arthritis,<br>
               Ankylosing Spondilytis<br>
             </div>
-            <div class="col">
-              <div name="checkmark-circle" float-end *ngIf="button_one == true"><b>:</b></div>
+            <div class="col text-right">
+              <div name="checkmark-circle" float-end *ngIf="button_one == true"><b><i class="fa fa-check"></i></b></div>
             </div>
           </div>
 
@@ -30,14 +30,14 @@
             <div class="col">
               no bone disease
             </div>
-            <div class="col">
-              <div *ngIf="button_two == true"><b>:</b></div>
+            <div class="col text-right">
+              <div *ngIf="button_two == true"><b><i class="fa fa-check"></i></b></div>
             </div>
           </div>
         </button>
       </div>
 
-      <div class="card intermediate_result mt-3">
+<!--      <div class="card intermediate_result mt-3">
         <div class="row">
           <div class="col center text-center">
             A: {{a}}
@@ -49,7 +49,7 @@
             C: {{c}}
           </div>
         </div>
-      </div>
+      </div>-->
 
       <div class="card mt-3 border-0">
         <div class="row">
@@ -57,7 +57,7 @@
             <button class="btn btn-outline-danger" (click)="goToNext()" [disabled]="!isenabled">Next</button>
           </div>
           <div class="col-6 text-center">
-            <app-letter-nav-modal buttoncolor="danger"></app-letter-nav-modal>
+            <!--<app-letter-nav-modal buttoncolor="danger"></app-letter-nav-modal>-->
           </div>
           <div class="col center text-right">
 

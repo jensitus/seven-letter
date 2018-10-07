@@ -10,9 +10,6 @@ export class LetterOneComponent implements OnInit {
 
   seven_letter_choice_1: string;
   button: string;
-  p: number;
-  a: number;
-  c: number;
   param_1: string;
   button_one: boolean;
   button_two: boolean;
@@ -20,11 +17,9 @@ export class LetterOneComponent implements OnInit {
   button_four: boolean;
   private currentColor: string;
   public isenabled: boolean;
+  home: boolean;
 
   constructor(private router: Router) {
-    this.a = 0;
-    this.p = 0;
-    this.c = 0;
     this.currentColor = 'compression';
     this.isenabled = false;
   }
@@ -33,42 +28,27 @@ export class LetterOneComponent implements OnInit {
     this.seven_letter_choice_1 = localStorage.getItem('seven_letter_choice_1');
     this.button = localStorage.getItem('button_letter_1');
     this.setButton(this.button);
+    if (this.button != null) {
+      this.isenabled = true;
+    } else {
+      this.isenabled = false;
+    }
   }
 
   select(seven_letter_choice_1, button) {
     console.log('letter one: ' + seven_letter_choice_1);
     this.param_1 = seven_letter_choice_1;
+    this.seven_letter_choice_1 = seven_letter_choice_1;
     this.button = button;
-    this.a = 0;
-    this.p = 0;
-    this.c = 0;
-    if (seven_letter_choice_1 === 'A') {
-      this.a = this.a + 1;
-    } else if (seven_letter_choice_1 === 'P') {
-      this.p = this.p + 1;
-    } else if (seven_letter_choice_1 === 'P/C') {
-      this.c = this.c + 1;
-      this.p = this.p + 1;
-    }
     this.setButton(button);
     this.isenabled = true;
-    console.log('this.a: ' + this.a);
-    console.log('this.p: ' + this.p);
-    console.log('this.c: ' + this.c);
-    console.log('disabled ' + this.isenabled);
+    localStorage.setItem('letter_one', this.param_1);
+    localStorage.setItem('seven_letter_choice_1', this.seven_letter_choice_1);
+    localStorage.setItem('button_letter_1', this.button);
   }
 
   goToNext() {
     console.log('param_1: ' + this.param_1);
-    localStorage.setItem('letter_one', this.param_1);
-    localStorage.setItem('seven_letter_choice_1', this.param_1);
-    localStorage.setItem('button_letter_1', this.button);
-    localStorage.setItem('a', this.a.toString());
-    localStorage.setItem('p', this.p.toString());
-    localStorage.setItem('c', this.c.toString());
-    localStorage.setItem('a1', this.a.toString());
-    localStorage.setItem('p1', this.p.toString());
-    localStorage.setItem('c1', this.c.toString());
     this.router.navigate(['two']);
   }
 

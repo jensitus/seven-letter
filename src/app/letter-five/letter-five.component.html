@@ -2,52 +2,53 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4">
+
       <div class="card mt-3">
         <div class="card-header one_header">
           5 ASA
         </div>
       </div>
-      <div class="card mt-3 border-0">
 
+      <div class="card mt-3 border-0">
         <button (click)="select('A / P', 'button_one')" class="btn btn-outline-danger text-left">
           <div class="row">
             <div class="col">
               ASA &le; 3
             </div>
-            <div class="col">
-              <div *ngIf="button_one == true"><b>:</b></div>
+            <div class="col text-right">
+              <div *ngIf="button_one == true"><b><i class="fa fa-check"></i></b></div>
             </div>
           </div>
-
         </button>
       </div>
-      <div class="card mt-3 border-0">
 
+      <div class="card mt-3 border-0">
         <button (click)="select('P', 'button_two')" class="btn btn-outline-danger text-left">
           <div class="row">
             <div class="col">
               ASA > 3
             </div>
-            <div class="col">
-              <div *ngIf="button_two == true"><b>:</b></div>
+            <div class="col text-right">
+              <div *ngIf="button_two == true"><b><i class="fa fa-check"></i></b></div>
             </div>
           </div>
         </button>
       </div>
-
-      <div class="card intermediate_result mt-3">
-        <div class="row">
-          <div class="col center text-center">
-            A: {{a}}
-          </div>
-          <div class="col center text-center">
-            P: {{p}}
-          </div>
-          <div class="col center text-center">
-            C: {{c}}
-          </div>
-        </div>
-      </div>
+      <!--
+           <div class="card intermediate_result mt-3">
+             <div class="row">
+               <div class="col center text-center">
+                 A: {{a}}
+               </div>
+               <div class="col center text-center">
+                 P: {{p}}
+               </div>
+               <div class="col center text-center">
+                 C: {{c}}
+               </div>
+             </div>
+           </div>
+     -->
 
       <div class="card mt-3 border-0">
         <div class="row">
@@ -55,16 +56,17 @@
             <button class="btn btn-outline-danger" (click)="goToNext()" [disabled]="!isenabled">Next</button>
           </div>
           <div class="col-7 center text-center">
-            <app-letter-nav-modal buttoncolor="danger"></app-letter-nav-modal>
+            <!--<app-letter-nav-modal buttoncolor="danger"></app-letter-nav-modal>-->
           </div>
           <div class="col center text-right">
 
           </div>
         </div>
       </div>
+
     </div>
   </div>
-<!-- the Modal: -->
+  <!-- the Modal: -->
 
 
 </div>
