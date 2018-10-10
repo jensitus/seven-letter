@@ -26,7 +26,7 @@ export class NavBarComponent implements OnInit {
   }
 
   imprint() {
-    this.router.navigate(['imprint']).then().catch();
+    this.router.navigate(['legal']).then().catch();
   }
 
   ngOnInit() {

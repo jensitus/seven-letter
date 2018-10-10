@@ -1,7 +1,7 @@
 <app-nav-bar title="Result" bg="primary"></app-nav-bar>
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 mb-5">
       <div class="card mt-3">
         <div class="one_header text-left">
           Conclusion
@@ -15,96 +15,96 @@
         </div>
       </div>
 
-    <div class="card mt-3">
-      <div class="row">
-        <div class="col-2 text-left">
+      <div class="card mt-3">
+        <div class="row">
+          <div class="col-2 text-left">
 
-        </div>
-        <div class="col-7 text-center py-2">
-          <div class="card intermediate_result">
-            <div class="row">
-              <div class="col center text-center">
-                A: {{a}}
+          </div>
+          <div class="col-7 text-center py-2">
+            <div class="card intermediate_result">
+              <div class="row">
+                <div class="col center text-center">
+                  A: {{a}}
+                </div>
+                <div class="col center text-center">
+                  P: {{p}}
+                </div>
+                <div class="col center text-center">
+                  C: {{c}}
+                </div>
               </div>
-              <div class="col center text-center">
-                P: {{p}}
-              </div>
-              <div class="col center text-center">
-                C: {{c}}
-              </div>
+
             </div>
+          </div>
+          <div class="col center text-right">
 
           </div>
         </div>
-        <div class="col center text-right">
+      </div>
 
+      <div class="card mt-3 px-3 py-3">
+        <div class="row">
+          <div class="col-8">
+            <b>1</b> <span class="px-3">Location:</span>
+          </div>
+          <div class="col-4">
+            {{letter_one}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <b>2</b> <span class="px-3">Extension:</span>
+          </div>
+          <div class="col-4">
+            {{letter_two}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <b>3</b> <span class="px-3">Alignment:</span>
+          </div>
+          <div class="col-4">
+            {{letter_three}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <b>4</b> <span class="px-3">Instability:</span>
+          </div>
+          <div class="col-4">
+            {{letter_four}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <b>5</b> <span class="px-3">ASA:</span>
+          </div>
+          <div class="col-4">
+            {{letter_five}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <b>6</b> <span class="px-3">bone diseases:</span>
+          </div>
+          <div class="col-4">
+            {{letter_six}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <b>7</b> <span class="px-3">C-Modifier:</span>
+          </div>
+          <div class="col-4">
+            {{c_modifier}}
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="card mt-3 px-3 py-3">
-      <div class="row">
-        <div class="col">
-          Location:
-        </div>
-        <div class="col">
-          {{letter_one}}
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          Extension:
-        </div>
-        <div class="col">
-          {{letter_two}}
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          Alignment:
-        </div>
-        <div class="col">
-          {{letter_three}}
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          Instability:
-        </div>
-        <div class="col">
-          {{letter_four}}
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          ASA:
-        </div>
-        <div class="col">
-          {{letter_five}}
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          bone diseases:
-        </div>
-        <div class="col">
-          {{letter_six}}
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          C-Modifier:
-        </div>
-        <div class="col">
-          {{c_modifier}}
-        </div>
-      </div>
-    </div>
-      <div class="mt-3">
+      <div class="mt-3 mb-5">
         <app-letter-nav-modal buttoncolor="primary"></app-letter-nav-modal>
       </div>
+    </div>
   </div>
-</div>
 </div>
 
 

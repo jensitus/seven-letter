@@ -3,7 +3,7 @@
   <span class="navbar-brand backlink" *ngIf="home == 'true'">{{title}}</span>
   <img src="../assets/imgs/logotrans.png" class="logo ml-5">
   <span class="link ml-5" (click)="homeClick()">home</span>
-  <span class="link ml-5" (click)="imprint()">imprint</span>
+  <span class="link ml-5" (click)="imprint()">legal</span>
 </nav>
 
 <nav id="top-nav-mobile" class="navbar navbar-expand-lg navbar-light bg-{{bg}}">
@@ -12,14 +12,14 @@
   <img src="../assets/imgs/logotrans.png" class="logo float-right">
 </nav>
 
-<nav id="bottom-nav" class="navbar fixed-bottom navbar-light">
+<nav id="bottom-nav" class="navbar fixed-bottom navbar-light bg-white">
   <ul class="nav justify-content-center">
     <li class="nav-item">
       <!--span class="backlink" (click)="homeClick()"><i class="fa fa-home"></i> home</span>-->
       <a class="nav-link text-{{bg}}" href="home"><i class="fa fa-home"></i> home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link text-{{bg}}" href="imprint"><i class="fa fa-envelope"></i> imprint</a>
+      <a class="nav-link text-{{bg}}" href="legal"><i class="fa fa-envelope"></i> legal</a>
     </li>
   </ul>
 </nav>

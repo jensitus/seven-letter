@@ -36,7 +36,7 @@ const app_routes: Routes = [
   { path: 'seven',   component:   LetterSevenComponent      },
   { path: 'result',  component:   ResultComponent           },
   { path: 'images',  component:   ImageViewerComponent      },
-  { path: 'imprint', component:   ImprintComponent          }
+  { path: 'legal', component:   ImprintComponent          }
 ];
 
 
