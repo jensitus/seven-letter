@@ -8,10 +8,17 @@ import {Router} from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  imageUrls;
+
   constructor(private router: Router) { }
 
   ngOnInit() {
     localStorage.clear();
+    this.imageUrls = [
+      {
+        image: '../assets/imgs/MRTaxialwebsite.jpg',
+        title: ''
+      }];
   }
 
   letsBegin() {

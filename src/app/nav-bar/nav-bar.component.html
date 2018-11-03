@@ -2,7 +2,7 @@
   <span class="navbar-brand backlink" (click)="backClick()" *ngIf="home != 'true'"><i class="fa fa-arrow-left"></i> {{title}}</span>
   <span class="navbar-brand backlink" *ngIf="home == 'true'">{{title}}</span>
   <img src="../assets/imgs/logotrans.png" class="logo ml-5">
-  <span class="link ml-5" (click)="homeClick()">home</span>
+  <span class="link ml-5" (click)="homeClick()" *ngIf="home != 'true'">home</span>
   <span class="link ml-5" (click)="imprint()">legal</span>
 </nav>
 
