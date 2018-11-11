@@ -1,0 +1,35 @@
+@media (max-width: 576px) {
+  .mrtaxialwebsite {
+    width: 30%;
+    margin-top: 3em;
+  }
+  .not-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 576px) {
+  .mrtaxialwebsite {
+    width: 30%;
+    margin-top: 4em;
+  }
+  .not-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .mrtaxialwebsite {
+    width: 100%;
+  }
+  .not-mobile {
+    display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  .img-lifted {
+    margin-top: -5em;
+  }
+}
+

@@ -8,11 +8,22 @@ import {Router} from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  imageUrls;
+  logoUrl;
+
   constructor(private router: Router) { }
 
   ngOnInit() {
     localStorage.clear();
+    this.imageUrls = [
+      {
+        image: '../assets/imgs/MRTaxialwebsite.jpg',
+        title: ''
+      }];
+    this.logoUrl = '../assets/imgs/logotrans.png';
   }
+
+  showPdf() {}
 
   letsBegin() {
     this.router.navigate(['/one']).then().catch();
