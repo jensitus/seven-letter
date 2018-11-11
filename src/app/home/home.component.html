@@ -1,36 +1,56 @@
 <app-nav-bar title="" home="true"></app-nav-bar>
 <div class="container">
   <div class="row mt-3">
-    <div class="col">
-      Welcome to the
-      Seven Letter Code
+    <div class="col-md text-center">
+      <h3>
+        Welcome to the<br>
+        <span class="text-danger">Seven Letter Code</span>
+      </h3>
     </div>
-    <div class="col">
-      This app helps in the surgical decision-making
-      for
-      cervical degenerative myelopathy
+    <div class="col-md">
+
+    </div>
+    <div class="col-md">
+      <div class="text-center not-mobile">
+        <img src="{{logoUrl}}" width="50%">
+      </div>
     </div>
   </div>
-  <div class="row mt-3">
-    <div class="col-md-2 mt-3" *ngFor="let i of imageUrls">
+
+  <div class="row">
+    <div class="col-md-3 text-center img-lifted not-mobile" *ngFor="let i of imageUrls">
       <b>{{i.title}}</b>
-      <img src="{{i.image}}" width="100%">
+      <img src="{{i.image}}" class="mrtaxialwebsite">
     </div>
-    <div class="col-3">
-      Medical responsibility:
-      Prof. L. Papavero, Dr. G. Schmeiser
-      Greg.schmeiser@gmail.com
-      Development: Jens Kornacker
+    <div class="col-md-7 text-center">
+      <h3 class="mt-5">
+        This app helps in the surgical decision-making
+        for
+        cervical degenerative myelopathy
+      </h3>
     </div>
   </div>
-  <div class="row mt-3">
-    <div class="col-2">
-      <label>For further Information:</label>
-      <button class="btn btn-outline-primary" (click)="showPdf()">Pdf</button>
+
+  <div class="row mt-5">
+    <div class="col-sm">
+     <div class="row mb-5">
+       <div class="col">
+         <label>further Information:</label><br>
+         <button class="btn btn-outline-primary" (click)="showPdf()">Pdf</button>
+       </div>
+       <div class="col">
+         <label>App:</label><br>
+         <button class="btn btn-outline-danger" (click)="letsBegin()">App</button>
+       </div>
+     </div>
     </div>
-    <div class="col-2">
-      <label>App:</label><br>
-      <button class="btn btn-outline-warning" (click)="letsBegin()">App</button>
+    <div class="col-sm not-mobile">
+      <b>Medical responsibility:</b><br>
+      Prof. L. Papavero<br>
+      Dr. G. Schmeiser<br>
+      greg.schmeiser@gmail.com<br><br>
+      <b>Development:</b><br>
+      Jens Kornacker
     </div>
   </div>
 
