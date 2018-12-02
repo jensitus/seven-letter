@@ -21,22 +21,27 @@ import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import { ImprintComponent } from './imprint/imprint.component';
 import {ModalModule} from 'ngx-bootstrap';
 import { LetterNavModalComponent } from './letter-nav-modal/letter-nav-modal.component';
+import {PdfViewerModule} from 'ng2-pdf-viewer';
+import { InfoComponent } from './info/info.component';
+import { InstructionsComponent } from './instructions/instructions.component';
 
 
 
 const app_routes: Routes = [
-  { path: 'one',     component:   LetterOneComponent        },
-  { path: 'home',    component:   HomeComponent             },
-  { path: '',        redirectTo:  'home', pathMatch: 'full' },
-  { path: 'two',     component:   LetterTwoComponent        },
-  { path: 'three',   component:   LetterThreeComponent      },
-  { path: 'four',    component:   LetterFourComponent       },
-  { path: 'five',    component:   LetterFiveComponent       },
-  { path: 'six',     component:   LetterSixComponent        },
-  { path: 'seven',   component:   LetterSevenComponent      },
-  { path: 'result',  component:   ResultComponent           },
-  { path: 'images',  component:   ImageViewerComponent      },
-  { path: 'legal', component:   ImprintComponent          }
+  { path: 'one',          component:   LetterOneComponent       },
+  { path: 'home',         component:   HomeComponent            },
+  { path: '',            redirectTo:  'home', pathMatch: 'full' },
+  { path: 'two',          component:   LetterTwoComponent       },
+  { path: 'three',        component:   LetterThreeComponent     },
+  { path: 'four',         component:   LetterFourComponent      },
+  { path: 'five',         component:   LetterFiveComponent      },
+  { path: 'six',          component:   LetterSixComponent       },
+  { path: 'seven',        component:   LetterSevenComponent     },
+  { path: 'result',       component:   ResultComponent          },
+  { path: 'images',       component:   ImageViewerComponent     },
+  { path: 'legal',        component:   ImprintComponent         },
+  { path: 'info',         component:   InfoComponent            },
+  { path: 'instructions', component:   InstructionsComponent    }
 ];
 
 
@@ -55,16 +60,20 @@ const app_routes: Routes = [
     ResultComponent,
     ImageViewerComponent,
     ImprintComponent,
-    LetterNavModalComponent
+    LetterNavModalComponent,
+    InfoComponent,
+    InstructionsComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(app_routes, { enableTracing: true }),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     AngularFontAwesomeModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    PdfViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

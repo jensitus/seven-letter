@@ -29,6 +29,10 @@ export class NavBarComponent implements OnInit {
     this.router.navigate(['legal']).then().catch();
   }
 
+  instructions() {
+    this.router.navigate(['instructions']).then().catch();
+  }
+
   ngOnInit() {
     console.log(this.home);
     console.log(typeof this.home);

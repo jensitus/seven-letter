@@ -33,16 +33,23 @@
 
   <div class="row mt-5">
     <div class="col-sm">
-     <div class="row mb-5">
-       <div class="col">
-         <label>Further&nbsp;Information:</label><br>
-         <button class="btn btn-outline-success" (click)="showPdf()">Pdf</button>
-       </div>
-       <div class="col">
-         <label>App:</label><br>
-         <button class="btn btn-outline-success" (click)="letsBegin()">App</button>
-       </div>
-     </div>
+      <div class="row mb-3">
+        <div class="col">
+          <!--<label>Further&nbsp;Information:</label><br>-->
+          <button class="btn btn-outline-primary" (click)="showPdf()">Further Information</button>
+          <!--<a href="/assets/info.pdf">info</a>-->
+        </div>
+        <div class="col">
+          <!--<label>App:</label><br>-->
+          <button class="btn btn-outline-success" (click)="letsBegin()">App</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <!--<label>Installation:</label><br>-->
+          <button class="btn btn-outline-info" (click)="instructions()">Install</button>
+        </div>
+      </div>
     </div>
     <div class="col-sm not-mobile">
       <b>Medical responsibility:</b><br>
