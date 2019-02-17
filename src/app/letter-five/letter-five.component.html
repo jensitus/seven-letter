@@ -13,7 +13,7 @@
         <button (click)="select('A / P', 'button_one')" class="btn btn-outline-danger text-left">
           <div class="row">
             <div class="col">
-              ASA &le; 3
+              ASA &lt; 3
             </div>
             <div class="col text-right">
               <div *ngIf="button_one == true"><b><i class="fa fa-check"></i></b></div>
@@ -26,7 +26,7 @@
         <button (click)="select('P', 'button_two')" class="btn btn-outline-danger text-left">
           <div class="row">
             <div class="col">
-              ASA > 3
+              ASA &ge; 3
             </div>
             <div class="col text-right">
               <div *ngIf="button_two == true"><b><i class="fa fa-check"></i></b></div>

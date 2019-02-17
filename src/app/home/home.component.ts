@@ -23,10 +23,16 @@ export class HomeComponent implements OnInit {
     this.logoUrl = '../assets/imgs/logotrans.png';
   }
 
-  showPdf() {}
+  showPdf() {
+    this.router.navigate(['/info']).then().catch();
+  }
 
   letsBegin() {
     this.router.navigate(['/one']).then().catch();
+  }
+
+  instructions() {
+    this.router.navigate(['instructions']).then().catch();
   }
 
 }

@@ -1,0 +1,15 @@
+<app-nav-bar title="Install" bg="success"></app-nav-bar>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col">
+      <h4> How to install on your phone</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mt-3" *ngFor="let i of instructionImageUrls">
+      <div class="mb-3"><b>{{i.title}}</b></div>
+      <div class="mb-3"><b>{{i.instructions}}</b></div>
+      <img src="{{i.image}}" width="90%">
+    </div>
+  </div>
+</div>
