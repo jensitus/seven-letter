@@ -22,7 +22,12 @@ export class InstructionsComponent implements OnInit {
       {
         image: '../assets/imgs/ff-7lc.png',
         title: 'Firefox',
-        instructions: 'click on the small house icon and then add to your Home screen'
+        instructions: 'click on the small house icon with the "+" inside and then add to your Home screen'
+      },
+      {
+        image: '../assets/imgs/install_iphone_1_2.png',
+        title: 'iPhone',
+        instructions: 'click on the share button and then add to Home screen'
       }
     ];
 
