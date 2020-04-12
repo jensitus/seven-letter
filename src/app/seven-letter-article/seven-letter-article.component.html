@@ -1,0 +1,18 @@
+<app-nav-bar title="Article" bg="danger"></app-nav-bar>
+<div class="container">
+  <div class="row">
+    <div class="col m-3">
+      <button (click)="prevPage()" [disabled]="page === 1" class="btn btn-outline-primary m-2">Prev</button>
+      <span>{{ page }} / {{ totalPages }}</span>
+      <button (click)="nextPage()" [disabled]="page === totalPages" class="btn btn-outline-success m-2">Next</button>
+    </div>
+  </div>
+  <pdf-viewer [src]="pdfSrc"
+              [show-all]="false"
+              [page]="page"
+              (after-load-complete)="afterLoadComplete($event)"
+              [render-text]="true"
+              [fit-to-page]="true"
+              style="display: block;">
+  </pdf-viewer>
+</div>

@@ -27,6 +27,10 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/info']).then().catch();
   }
 
+  showArticle() {
+    this.router.navigate(['/article']).then().catch();
+  }
+
   letsBegin() {
     this.router.navigate(['/one']).then().catch();
   }
